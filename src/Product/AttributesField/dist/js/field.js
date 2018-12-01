@@ -409,6 +409,10 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_laravel_nova__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__TranslationFormField__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__TranslationFormField___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__TranslationFormField__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -422,38 +426,97 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mixins: [__WEBPACK_IMPORTED_MODULE_0_laravel_nova__["FormField"], __WEBPACK_IMPORTED_MODULE_0_laravel_nova__["HandlesValidationErrors"]],
+  mixins: [__WEBPACK_IMPORTED_MODULE_0_laravel_nova__["FormField"], __WEBPACK_IMPORTED_MODULE_0_laravel_nova__["HandlesValidationErrors"]],
 
-    props: ['resourceName', 'resourceId', 'field'],
+  props: ['resourceName', 'resourceId', 'field'],
 
-    methods: {
-        /*
-         * Set the initial, internal value for the field.
-         */
-        setInitialValue: function setInitialValue() {
-            this.value = this.field.value || '';
-        },
+  components: {
+    TranslationFormField: __WEBPACK_IMPORTED_MODULE_1__TranslationFormField___default.a
+  },
 
-
-        /**
-         * Fill the given FormData object with the field's internal value.
-         */
-        fill: function fill(formData) {
-            formData.append(this.field.attribute, this.value || '');
-        },
+  data: function data() {
+    return {
+      eventResponse: null,
+      params: 'taxon',
+      attributes: []
+    };
+  },
 
 
-        /**
-         * Update the field's internal value.
-         */
-        handleChange: function handleChange(value) {
-            this.value = value;
-        }
+  methods: {
+    /*
+     * Set the initial, internal value for the field.
+     */
+    setInitialValue: function setInitialValue() {
+      this.value = this.field.value || '';
+    },
+
+
+    /**
+     * Fill the given FormData object with the field's internal value.
+     */
+    fill: function fill(formData) {
+      formData.append(this.field.attribute, this.value || '');
+    },
+
+
+    /**
+     * Update the field's internal value.
+     */
+    handleChange: function handleChange(value) {
+      this.value = value;
+    },
+    handleEventResponseChange: function handleEventResponseChange() {
+      var _this = this;
+
+      this.fetchRequest().then(function (_ref) {
+        var data = _ref.data;
+
+        _this.attributes = data;
+      });
+    },
+    registerListener: function registerListener() {
+      var _this2 = this;
+
+      var eventKey = _.get(this, 'field.eventKey', false);
+      if (eventKey) {
+        Nova.$on(eventKey, function (value) {
+          _this2.eventResponse = value;
+          _this2.handleEventResponseChange();
+        });
+      }
+    },
+    fetchRequest: function fetchRequest() {
+      return Nova.request().get(this.api, {
+        params: _defineProperty({}, this.params, this.eventResponse)
+      });
     }
+  },
+  computed: {
+    api: function api() {
+      return Nova.config['erp-prefix'] + '/' + _.get(this, 'field.api', 'product-attributes');
+    }
+  },
+  mounted: function mounted() {
+    this.registerListener();
+    this.params = _.get(this, 'field.params', this.params);
+  }
 });
 
 /***/ }),
@@ -10658,37 +10721,45 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "default-field",
-    { attrs: { field: _vm.field, errors: _vm.errors } },
+    "div",
     [
-      _c("template", { slot: "field" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.value,
-              expression: "value"
-            }
+      _c("div", { staticClass: "flex" }, [
+        _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
+          _c(
+            "label",
+            { staticClass: "inline-block text-80 pt-2 leading-tight" },
+            [
+              _vm._v(
+                "\n                " + _vm._s(_vm.field.name) + "\n            "
+              )
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "w-1/2 py-6 px-8" },
+          [
+            _vm.attributes.length === 0
+              ? _c("el-alert", {
+                  attrs: {
+                    title: "该分类暂无匹配属性",
+                    type: "error",
+                    closable: false
+                  }
+                })
+              : _vm._e()
           ],
-          staticClass: "w-full form-control form-input form-input-bordered",
-          class: _vm.errorClasses,
-          attrs: {
-            id: _vm.field.name,
-            type: "text",
-            placeholder: _vm.field.name
-          },
-          domProps: { value: _vm.value },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.value = $event.target.value
-            }
-          }
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _vm._l(_vm.attributes, function(attribute) {
+        return _c("translation-form-field", {
+          key: attribute.name,
+          attrs: { field: attribute }
         })
-      ])
+      })
     ],
     2
   )
@@ -10708,6 +10779,311 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(19)
+/* template */
+var __vue_template__ = __webpack_require__(20)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/TranslationFormField.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-19c51950", Component.options)
+  } else {
+    hotAPI.reload("data-v-19c51950", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_nova___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_laravel_nova__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  mixins: [__WEBPACK_IMPORTED_MODULE_0_laravel_nova__["FormField"], __WEBPACK_IMPORTED_MODULE_0_laravel_nova__["HandlesValidationErrors"]],
+
+  props: ['resourceName', 'resourceId', 'field'],
+
+  data: function data() {
+    return {
+      locales: [],
+      currentLocale: null
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.locales = Object.keys(this.localesMap);
+
+    this.currentLocale = this.locales[0] || null;
+
+    Nova.$on('\'localeChanged-\'' + this.field.name, function (locale) {
+      if (_this.currentLocale !== locale) {
+        _this.changeTab(locale, true);
+      }
+    });
+  },
+
+
+  methods: {
+    /*
+     * Set the initial, internal value for the field.
+     */
+    setInitialValue: function setInitialValue() {
+      this.value = this.field.value || {};
+    },
+
+
+    /**
+     * Fill the given FormData object with the field's internal value.
+     */
+    fill: function fill(formData) {
+      var _this2 = this;
+
+      Object.keys(this.value).forEach(function (locale) {
+        formData.append(_this2.field.attribute + '[' + locale + ']', _this2.value[locale] || '');
+      });
+    },
+
+
+    /**
+     * Update the field's internal value.
+     */
+    handleChange: function handleChange(value) {
+      this.value[this.currentLocale] = value;
+    },
+    changeTab: function changeTab(locale, dontEmit) {
+      var _this3 = this;
+
+      if (this.currentLocale !== locale) {
+        if (!dontEmit) {
+          Nova.$emit('\'localeChanged-\'' + this.field.name, locale);
+        }
+
+        this.currentLocale = locale;
+
+        this.$nextTick(function () {
+          if (_this3.field.trix) {
+            _this3.$refs.field.update();
+          } else {
+            _this3.$refs.field.focus();
+          }
+        });
+      }
+    },
+    handleTab: function handleTab(e) {
+      var currentIndex = this.locales.indexOf(this.currentLocale);
+      if (!e.shiftKey) {
+        if (currentIndex < this.locales.length - 1) {
+          e.preventDefault();
+          this.changeTab(this.locales[currentIndex + 1]);
+        }
+      } else {
+        if (currentIndex > 0) {
+          e.preventDefault();
+          this.changeTab(this.locales[currentIndex - 1]);
+        }
+      }
+    }
+  },
+  computed: {
+    localesMap: function localesMap() {
+      return _.get(Nova, 'config.locales');
+    },
+    indexLocale: function indexLocale() {
+      return _.get(Nova, 'config.indexLocale');
+    }
+  }
+});
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "flex items-center" }, [
+    _c("div", { staticClass: "w-1/5 py-6 px-8" }, [
+      _c(
+        "span",
+        {
+          staticClass: "inline-block bg-30 rounded-sm px-3 py-1 text-80 text-sm"
+        },
+        [_vm._v("\n            " + _vm._s(_vm.field.name) + "\n        ")]
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "w-1/2 py-6 px-8" },
+      [
+        _vm._l(_vm.localesMap, function(locale, localeKey) {
+          return _c(
+            "a",
+            {
+              key: "a-" + localeKey,
+              staticClass:
+                "inline-block border-50 font-bold cursor-pointer mr-2 animate-text-color select-none",
+              class: {
+                "text-60": localeKey !== _vm.currentLocale,
+                "text-primary border-b-2": localeKey === _vm.currentLocale
+              },
+              on: {
+                click: function($event) {
+                  _vm.changeTab(localeKey)
+                }
+              }
+            },
+            [_vm._v("\n            " + _vm._s(locale) + "\n        ")]
+          )
+        }),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model.trim",
+              value: _vm.value[_vm.currentLocale],
+              expression: "value[currentLocale]",
+              modifiers: { trim: true }
+            }
+          ],
+          ref: "field",
+          staticClass:
+            "mt-4 w-full form-control form-input form-input-bordered",
+          class: _vm.errorClasses,
+          attrs: {
+            type: "text",
+            id: _vm.field.name,
+            placeholder: _vm.field.name
+          },
+          domProps: { value: _vm.value[_vm.currentLocale] },
+          on: {
+            keydown: function($event) {
+              if (
+                !("button" in $event) &&
+                _vm._k($event.keyCode, "tab", 9, $event.key, "Tab")
+              ) {
+                return null
+              }
+              return _vm.handleTab($event)
+            },
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.value, _vm.currentLocale, $event.target.value.trim())
+            },
+            blur: function($event) {
+              _vm.$forceUpdate()
+            }
+          }
+        }),
+        _vm._v(" "),
+        _vm.hasError
+          ? _c("p", { staticClass: "my-2 text-danger" }, [
+              _vm._v("\n            " + _vm._s(_vm.firstError) + "\n        ")
+            ])
+          : _vm._e()
+      ],
+      2
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-19c51950", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
