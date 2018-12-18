@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="border-b border-40">
         <div class="flex">
             <div class="w-1/5 py-6 px-8">
                 <label class="inline-block text-80 pt-2 leading-tight">
@@ -16,6 +16,7 @@
             </div>
         </div>
         <translation-form-field
+                :errors="errors"
                 v-for="attribute in attributes" :key="attribute.name" :field="attribute">
         </translation-form-field>
     </div>
@@ -23,11 +24,12 @@
 </template>
 
 <script>
-  import { FormField, HandlesValidationErrors } from 'laravel-nova'
+  import { FormField, HandlesValidationErrors, Minimum } from 'laravel-nova'
   import TranslationFormField from './TranslationFormField'
+  import Helper from '../helper'
 
   export default {
-    mixins: [FormField, HandlesValidationErrors],
+    mixins: [FormField, HandlesValidationErrors, Helper],
 
     props: ['resourceName', 'resourceId', 'field'],
 
@@ -39,7 +41,6 @@
       return {
         eventResponse: null,
         params: 'taxon',
-        attributes: []
       }
     },
 
@@ -55,7 +56,10 @@
        * Fill the given FormData object with the field's internal value.
        */
       fill (formData) {
-        formData.append(this.field.attribute, this.value || '')
+        this.attributes.forEach(attribute => {
+          attribute.fill(formData)
+        })
+        // formData.append(this.field.attribute, this.value || '')
       },
 
       /**
@@ -67,35 +71,45 @@
 
       handleEventResponseChange () {
         this.fetchRequest().then(({data}) => {
-          this.attributes = data
+          this.fillAttributesValues(data)
         })
       },
 
       registerListener () {
-        const eventKey = _.get(this, 'field.eventKey', false)
-        if (eventKey) {
-          Nova.$on(eventKey, value => {
+        Nova.$on(this.eventName, value => {
+          if (value !== this.eventResponse) {
             this.eventResponse = value
             this.handleEventResponseChange()
-          })
-        }
+          }
+        })
       },
+
+      deleteListener () {
+        Nova.$off(this.eventName)
+      },
+
       fetchRequest () {
-        return Nova.request().get(this.api, {
+        return Minimum(Nova.request().get(this.api, {
           params: {
             [this.params]: this.eventResponse
           }
-        })
+        }))
       }
     },
     computed: {
       api () {
         return `${Nova.config['erp-prefix']}/${_.get(this, 'field.api', 'product-attributes')}`
+      },
+      eventName () {
+        return _.get(this, 'field.eventKey', 'taxon-change')
       }
     },
     mounted () {
       this.registerListener()
       this.params = _.get(this, 'field.params', this.params)
+    },
+    beforeDestroy () {
+      this.deleteListener()
     }
   }
 </script>

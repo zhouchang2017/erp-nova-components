@@ -1,17 +1,17 @@
 <template>
     <div class="flex items-center">
-        <div class="w-1/5 py-6 px-8">
+        <div class="w-1/5 py-3 px-8">
             <span
                     class="inline-block bg-30 rounded-sm px-3 py-1 text-80 text-sm">
                 {{field.name}}
             </span>
 
         </div>
-        <div class="w-1/2 py-6 px-8">
+        <div class="w-1/2 py-3 px-8">
             <a
                     class="inline-block border-50 font-bold cursor-pointer mr-2 animate-text-color select-none"
 
-                    v-for="(locale, localeKey) in localesMap"
+                    v-for="(locale, localeKey) in locales"
                     :key="`a-${localeKey}`"
                     :class="{ 'text-60': localeKey !== currentLocale, 'text-primary border-b-2': localeKey === currentLocale }"
                     @click="changeTab(localeKey)"
@@ -45,90 +45,84 @@
   export default {
     mixins: [FormField, HandlesValidationErrors],
 
-    props: ['resourceName', 'resourceId', 'field'],
+    props: ['field'],
 
-    data() {
+    data () {
       return {
-        locales: [],
+        languages: [],
         currentLocale: null,
       }
     },
 
-    mounted() {
-      this.locales = Object.keys(this.localesMap)
+    mounted () {
+      this.languages = Object.keys(this.locales)
 
-      this.currentLocale = this.locales[0] || null;
+      this.currentLocale = this.languages[0] || null
 
       Nova.$on(`'localeChanged-'${this.field.name}`, locale => {
-        if(this.currentLocale !== locale) {
-          this.changeTab(locale, true);
+        if (this.currentLocale !== locale) {
+          this.changeTab(locale, true)
         }
-      });
+      })
     },
 
     methods: {
       /*
        * Set the initial, internal value for the field.
        */
-      setInitialValue() {
+      setInitialValue () {
         this.value = this.field.value || {}
       },
 
       /**
        * Fill the given FormData object with the field's internal value.
        */
-      fill(formData) {
+      fill (formData) {
         Object.keys(this.value).forEach(locale => {
-          formData.append(this.field.attribute + '[' + locale + ']', this.value[locale] || '')
+          formData.append(this.field.attribute + '[' + this.field.id + ']' + '[' + locale + ']' + '[value]', this.value[locale] || '')
+          formData.append(this.field.attribute + '[' + this.field.id + ']' + '[' + locale + ']' + '[origin]', _.get(this, `field.origin.${locale}`) || '')
         })
       },
 
       /**
        * Update the field's internal value.
        */
-      handleChange(value) {
+      handleChange (value) {
         this.value[this.currentLocale] = value
       },
 
-      changeTab(locale, dontEmit) {
-        if(this.currentLocale !== locale){
-          if(!dontEmit){
-            Nova.$emit(`'localeChanged-'${this.field.name}`, locale);
+      changeTab (locale, dontEmit) {
+        if (this.currentLocale !== locale) {
+          if (!dontEmit) {
+            Nova.$emit(`'localeChanged-'${this.field.name}`, locale)
           }
 
-          this.currentLocale = locale;
+          this.currentLocale = locale
 
           this.$nextTick(() => {
             if (this.field.trix) {
               this.$refs.field.update()
             } else {
-              this.$refs.field.focus()
+                // TODO updated error
+                this.$refs['field'] && this.$refs['field'].focus()
             }
           })
         }
       },
 
-      handleTab(e) {
-        const currentIndex = this.locales.indexOf(this.currentLocale)
+      handleTab (e) {
+        const currentIndex = this.languages.indexOf(this.currentLocale)
         if (!e.shiftKey) {
-          if (currentIndex < this.locales.length - 1) {
-            e.preventDefault();
-            this.changeTab(this.locales[currentIndex + 1]);
+          if (currentIndex < this.languages.length - 1) {
+            e.preventDefault()
+            this.changeTab(this.languages[currentIndex + 1])
           }
         } else {
           if (currentIndex > 0) {
-            e.preventDefault();
-            this.changeTab(this.locales[currentIndex - 1]);
+            e.preventDefault()
+            this.changeTab(this.languages[currentIndex - 1])
           }
         }
-      }
-    },
-    computed: {
-      localesMap () {
-        return _.get(Nova, 'config.locales')
-      },
-      indexLocale () {
-        return _.get(Nova, 'config.indexLocale')
       }
     }
   }
