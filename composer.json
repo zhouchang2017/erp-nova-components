@@ -14,6 +14,13 @@
             "Chang\\Erp\\Nova\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Chang\\Erp\\Nova\\ErpNovaComponentServiceProvider"
+            ]
+        }
+    },
     "config": {
         "sort-packages": true
     },

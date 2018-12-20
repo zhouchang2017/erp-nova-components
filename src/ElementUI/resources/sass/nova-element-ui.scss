@@ -1,0 +1,59 @@
+.el-dialog {
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08) !important;
+  overflow: hidden !important;
+  border-radius: .5rem !important;
+  background-color: var(--white) !important;
+  text-align: left;
+}
+
+.el-dialog__footer {
+  padding: .75rem 1.5rem .75rem 1.5rem !important;
+  background-color: #f4f7fa;
+  display: flex;
+}
+
+.el-dialog__header {
+  padding: 1.5rem 1.5rem .75rem !important;
+  font-size: 1.25rem;
+  color: #252d37;
+  font-weight: 400;
+}
+
+.el-dialog__body {
+  padding: .75rem 1.5rem .75rem 1.5rem !important;
+  font-size: 16px !important;
+}
+
+//
+//.el-step__head.is-finish{
+//  color:#21b978!important;
+//  border-color:#21b978!important;
+//}
+//
+//.el-step__title.is-finish{
+//  color:#21b978!important;
+//}
+//
+//.el-step__description.is-finish{
+//  color:#21b978!important;
+//}
+//
+//.el-step__head.is-process{
+//  color:#4099de!important;
+//  border-color:#4099de!important;
+//}
+//
+//.el-step__title.is-process{
+//  color:#4099de!important;
+//}
+//
+//.el-step__description.is-process{
+//  color:#4099de!important;
+//}
+//
+.el-textarea__inner:focus {
+  box-shadow: 0 0 8px #4099de;
+  border: none;
+  border-radius: .5rem;
+  outline: none;
+}
