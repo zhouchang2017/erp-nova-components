@@ -38,14 +38,13 @@ class ElementStepField extends Field
     /*
      * 供应商提交审核 to-review
      * */
-    public function slot(string $slot)
+    public function slot(string $slot, string $canStatus = 'UN_COMMIT')
     {
-        return $this->withMeta(['slot' => $slot]);
+        return $this->withMeta(['slot' => $slot, 'canStatus' => $canStatus]);
     }
 
     protected function resolveAttribute($resource, $attribute)
     {
-        $this->withMeta(['canToReviewValue' => $resource::canToReviewValue()]);
         $data = parent::resolveAttribute($resource, $attribute);
         return empty($data) ? $this->default : $data;
     }

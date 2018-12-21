@@ -1,1 +1,4146 @@
-!function(t){var e={};function n(r){if(e[r])return e[r].exports;var i=e[r]={i:r,l:!1,exports:{}};return t[r].call(i.exports,i,i.exports,n),i.l=!0,i.exports}n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{configurable:!1,enumerable:!0,get:r})},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=8)}([function(t,e){t.exports=function(t,e,n,r,i,o){var s,a=t=t||{},u=typeof t.default;"object"!==u&&"function"!==u||(s=t,a=t.default);var c,l="function"==typeof a?a.options:a;if(e&&(l.render=e.render,l.staticRenderFns=e.staticRenderFns,l._compiled=!0),n&&(l.functional=!0),i&&(l._scopeId=i),o?(c=function(t){(t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),r&&r.call(this,t),t&&t._registeredComponents&&t._registeredComponents.add(o)},l._ssrRegister=c):r&&(c=r),c){var f=l.functional,p=f?l.render:l.beforeCreate;f?(l._injectStyles=c,l.render=function(t,e){return c.call(e),p(t,e)}):l.beforeCreate=p?[].concat(p,c):[c]}return{esModule:s,exports:a,options:l}}},function(t,e,n){t.exports=n(17)},function(t,e){t.exports=function(t){var e=[];return e.toString=function(){return this.map(function(e){var n=function(t,e){var n=t[1]||"",r=t[3];if(!r)return n;if(e&&"function"==typeof btoa){var i=(s=r,"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(s))))+" */"),o=r.sources.map(function(t){return"/*# sourceURL="+r.sourceRoot+t+" */"});return[n].concat(o).concat([i]).join("\n")}var s;return[n].join("\n")}(e,t);return e[2]?"@media "+e[2]+"{"+n+"}":n}).join("")},e.i=function(t,n){"string"==typeof t&&(t=[[null,t,""]]);for(var r={},i=0;i<this.length;i++){var o=this[i][0];"number"==typeof o&&(r[o]=!0)}for(i=0;i<t.length;i++){var s=t[i];"number"==typeof s[0]&&r[s[0]]||(n&&!s[2]?s[2]=n:n&&(s[2]="("+s[2]+") and ("+n+")"),e.push(s))}},e}},function(t,e,n){var r="undefined"!=typeof document;if("undefined"!=typeof DEBUG&&DEBUG&&!r)throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var i=n(15),o={},s=r&&(document.head||document.getElementsByTagName("head")[0]),a=null,u=0,c=!1,l=function(){},f=null,p="data-vue-ssr-id",d="undefined"!=typeof navigator&&/msie [6-9]\b/.test(navigator.userAgent.toLowerCase());function h(t){for(var e=0;e<t.length;e++){var n=t[e],r=o[n.id];if(r){r.refs++;for(var i=0;i<r.parts.length;i++)r.parts[i](n.parts[i]);for(;i<n.parts.length;i++)r.parts.push(v(n.parts[i]));r.parts.length>n.parts.length&&(r.parts.length=n.parts.length)}else{var s=[];for(i=0;i<n.parts.length;i++)s.push(v(n.parts[i]));o[n.id]={id:n.id,refs:1,parts:s}}}}function m(){var t=document.createElement("style");return t.type="text/css",s.appendChild(t),t}function v(t){var e,n,r=document.querySelector("style["+p+'~="'+t.id+'"]');if(r){if(c)return l;r.parentNode.removeChild(r)}if(d){var i=u++;r=a||(a=m()),e=_.bind(null,r,i,!1),n=_.bind(null,r,i,!0)}else r=m(),e=function(t,e){var n=e.css,r=e.media,i=e.sourceMap;r&&t.setAttribute("media",r);f.ssrId&&t.setAttribute(p,e.id);i&&(n+="\n/*# sourceURL="+i.sources[0]+" */",n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(i))))+" */");if(t.styleSheet)t.styleSheet.cssText=n;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(n))}}.bind(null,r),n=function(){r.parentNode.removeChild(r)};return e(t),function(r){if(r){if(r.css===t.css&&r.media===t.media&&r.sourceMap===t.sourceMap)return;e(t=r)}else n()}}t.exports=function(t,e,n,r){c=n,f=r||{};var s=i(t,e);return h(s),function(e){for(var n=[],r=0;r<s.length;r++){var a=s[r];(u=o[a.id]).refs--,n.push(u)}e?h(s=i(t,e)):s=[];for(r=0;r<n.length;r++){var u;if(0===(u=n[r]).refs){for(var c=0;c<u.parts.length;c++)u.parts[c]();delete o[u.id]}}}};var g,y=(g=[],function(t,e){return g[t]=e,g.filter(Boolean).join("\n")});function _(t,e,n,r){var i=n?"":r.css;if(t.styleSheet)t.styleSheet.cssText=y(e,i);else{var o=document.createTextNode(i),s=t.childNodes;s[e]&&t.removeChild(s[e]),s.length?t.insertBefore(o,s[e]):t.appendChild(o)}}},function(t,e,n){"use strict";e.a={props:["resourceName","resourceId","field"],provide:function(){return{resourceName:this.resourceName,resourceId:this.resourceId,field:this.field}},data:function(){return{warehouse:{},resource:{},address:{},initialLoading:!0}},methods:{fetchResource:function(){return Nova.request().get(this.fetchResourceApi).then(function(t){return t.data}).catch(function(t){var e=t.response;console.error(e)})},setAddress:function(){var t=this.resource.shipment;this.warehouse={name:"收件地址名称",attribute:"warehouse",value:t.name},this.address={name:"地址",attribute:"address",value:t.simple_address}},initItemUnit:function(){this.resource.items.forEach(function(t){_.tap(_.get(t,"units",[]),function(t){t.forEach(function(t){_.isNull(t.shipment)&&_.set(t,"shipment",{id:null,logistic_id:null,tracking_number:""})})})})}},computed:{fetchResourceApi:function(){return Nova.config["erp-prefix"]+"/"+this.resourceName+"/"+this.resourceId},toName:function(){return _.get(this.resource,"warehouse.name","")},alreadyShipped:function(){return _.get(this.field,"shipped")},shipmentApi:function(){return Nova.config["erp-prefix"]+"/"+this.resourceName+"/"+this.resourceId+"/shipment"},authorizedToUpdate:function(){return _.get(this,"field.authorizedToUpdate",!1)}}}},function(t,e,n){var r=n(0)(n(35),n(36),!1,function(t){n(33)},null,null);t.exports=r.exports},function(t,e,n){var r=n(0)(n(32),n(37),!1,function(t){n(30)},"data-v-d2f98e94",null);t.exports=r.exports},function(t,e,n){"use strict";var r=n(1),i=n.n(r);e.a={props:{logistics:{type:Array,default:function(){return[]}}},data:function(){return{logisticOptions:[]}},methods:{getLogisticsList:function(){return Nova.request().get(this.logisticsApi).then(function(t){return t.data}).catch(function(t){console.error(t.response)})},initLogistics:function(){var t,e=(t=i.a.mark(function t(){return i.a.wrap(function(t){for(;;)switch(t.prev=t.next){case 0:if(!(this.logistics.length<=0)){t.next=4;break}return t.next=3,this.getLogisticsList();case 3:this.logisticOptions=t.sent;case 4:case"end":return t.stop()}},t,this)}),function(){var e=t.apply(this,arguments);return new Promise(function(t,n){return function r(i,o){try{var s=e[i](o),a=s.value}catch(t){return void n(t)}if(!s.done)return Promise.resolve(a).then(function(t){r("next",t)},function(t){r("throw",t)});t(a)}("next")})});return function(){return e.apply(this,arguments)}}()},computed:{logisticsApi:function(){return Nova.config["erp-prefix"]+"/logistics"}}}},function(t,e,n){n(9),t.exports=n(44)},function(t,e,n){Nova.booting(function(t,e){t.component("send-shipment-tool",n(10)),e.addRoutes([{name:"shipment.detail",path:"/resources/:resourceName/:resourceId/shipment",component:n(26),props:function(t){return{resourceName:t.params.resourceName,resourceId:t.params.resourceId}}},{name:"shipment.update",path:"/resources/:resourceName/:resourceId/shipment/edit",component:n(39),props:function(t){return{resourceName:t.params.resourceName,resourceId:t.params.resourceId}}}])})},function(t,e,n){var r=n(0)(n(11),n(25),!1,null,null,null);t.exports=r.exports},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=n(12),i=n.n(r),o=n(20),s=n.n(o);e.default={props:["resourceName","resourceId","field","resource"],components:{InventoryIncomes:i.a,InventoryExpends:s.a}}},function(t,e,n){var r=n(0)(n(16),n(19),!1,function(t){n(13)},"data-v-1449f934",null);t.exports=r.exports},function(t,e,n){var r=n(14);"string"==typeof r&&(r=[[t.i,r,""]]),r.locals&&(t.exports=r.locals);n(3)("595b79ec",r,!0,{})},function(t,e,n){(t.exports=n(2)(!1)).push([t.i,"",""])},function(t,e){t.exports=function(t,e){for(var n=[],r={},i=0;i<e.length;i++){var o=e[i],s=o[0],a={id:t+":"+i,css:o[1],media:o[2],sourceMap:o[3]};r[s]?r[s].parts.push(a):n.push(r[s]={id:s,parts:[a]})}return n}},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=n(1),i=n.n(r),o=n(4);e.default={name:"inventory-incomes",mixins:[o.a],methods:{goShipment:function(){var t=this.$route.params,e=t.resourceName,n=t.resourceId;this.alreadyShipped?this.$router.push({name:"shipment.detail",params:{resourceName:e,resourceId:n}}):this.$router.push({name:"shipment.update",params:{resourceName:e,resourceId:n}})}},computed:{btnTitle:function(){return this.alreadyShipped?"物流详情":"发货"}},created:function(){var t,e=(t=i.a.mark(function t(){return i.a.wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,this.fetchResource();case 2:this.resource=t.sent,this.setAddress();case 4:case"end":return t.stop()}},t,this)}),function(){var e=t.apply(this,arguments);return new Promise(function(t,n){return function r(i,o){try{var s=e[i](o),a=s.value}catch(t){return void n(t)}if(!s.done)return Promise.resolve(a).then(function(t){r("next",t)},function(t){r("throw",t)});t(a)}("next")})});return function(){return e.apply(this,arguments)}}()}},function(t,e,n){var r=function(){return this}()||Function("return this")(),i=r.regeneratorRuntime&&Object.getOwnPropertyNames(r).indexOf("regeneratorRuntime")>=0,o=i&&r.regeneratorRuntime;if(r.regeneratorRuntime=void 0,t.exports=n(18),i)r.regeneratorRuntime=o;else try{delete r.regeneratorRuntime}catch(t){r.regeneratorRuntime=void 0}},function(t,e){!function(e){"use strict";var n,r=Object.prototype,i=r.hasOwnProperty,o="function"==typeof Symbol?Symbol:{},s=o.iterator||"@@iterator",a=o.asyncIterator||"@@asyncIterator",u=o.toStringTag||"@@toStringTag",c="object"==typeof t,l=e.regeneratorRuntime;if(l)c&&(t.exports=l);else{(l=e.regeneratorRuntime=c?t.exports:{}).wrap=b;var f="suspendedStart",p="suspendedYield",d="executing",h="completed",m={},v={};v[s]=function(){return this};var g=Object.getPrototypeOf,y=g&&g(g($([])));y&&y!==r&&i.call(y,s)&&(v=y);var _=S.prototype=w.prototype=Object.create(v);k.prototype=_.constructor=S,S.constructor=k,S[u]=k.displayName="GeneratorFunction",l.isGeneratorFunction=function(t){var e="function"==typeof t&&t.constructor;return!!e&&(e===k||"GeneratorFunction"===(e.displayName||e.name))},l.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,S):(t.__proto__=S,u in t||(t[u]="GeneratorFunction")),t.prototype=Object.create(_),t},l.awrap=function(t){return{__await:t}},N(C.prototype),C.prototype[a]=function(){return this},l.AsyncIterator=C,l.async=function(t,e,n,r){var i=new C(b(t,e,n,r));return l.isGeneratorFunction(e)?i:i.next().then(function(t){return t.done?t.value:i.next()})},N(_),_[u]="Generator",_[s]=function(){return this},_.toString=function(){return"[object Generator]"},l.keys=function(t){var e=[];for(var n in t)e.push(n);return e.reverse(),function n(){for(;e.length;){var r=e.pop();if(r in t)return n.value=r,n.done=!1,n}return n.done=!0,n}},l.values=$,O.prototype={constructor:O,reset:function(t){if(this.prev=0,this.next=0,this.sent=this._sent=n,this.done=!1,this.delegate=null,this.method="next",this.arg=n,this.tryEntries.forEach(I),!t)for(var e in this)"t"===e.charAt(0)&&i.call(this,e)&&!isNaN(+e.slice(1))&&(this[e]=n)},stop:function(){this.done=!0;var t=this.tryEntries[0].completion;if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function(t){if(this.done)throw t;var e=this;function r(r,i){return a.type="throw",a.arg=t,e.next=r,i&&(e.method="next",e.arg=n),!!i}for(var o=this.tryEntries.length-1;o>=0;--o){var s=this.tryEntries[o],a=s.completion;if("root"===s.tryLoc)return r("end");if(s.tryLoc<=this.prev){var u=i.call(s,"catchLoc"),c=i.call(s,"finallyLoc");if(u&&c){if(this.prev<s.catchLoc)return r(s.catchLoc,!0);if(this.prev<s.finallyLoc)return r(s.finallyLoc)}else if(u){if(this.prev<s.catchLoc)return r(s.catchLoc,!0)}else{if(!c)throw new Error("try statement without catch or finally");if(this.prev<s.finallyLoc)return r(s.finallyLoc)}}}},abrupt:function(t,e){for(var n=this.tryEntries.length-1;n>=0;--n){var r=this.tryEntries[n];if(r.tryLoc<=this.prev&&i.call(r,"finallyLoc")&&this.prev<r.finallyLoc){var o=r;break}}o&&("break"===t||"continue"===t)&&o.tryLoc<=e&&e<=o.finallyLoc&&(o=null);var s=o?o.completion:{};return s.type=t,s.arg=e,o?(this.method="next",this.next=o.finallyLoc,m):this.complete(s)},complete:function(t,e){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&e&&(this.next=e),m},finish:function(t){for(var e=this.tryEntries.length-1;e>=0;--e){var n=this.tryEntries[e];if(n.finallyLoc===t)return this.complete(n.completion,n.afterLoc),I(n),m}},catch:function(t){for(var e=this.tryEntries.length-1;e>=0;--e){var n=this.tryEntries[e];if(n.tryLoc===t){var r=n.completion;if("throw"===r.type){var i=r.arg;I(n)}return i}}throw new Error("illegal catch attempt")},delegateYield:function(t,e,r){return this.delegate={iterator:$(t),resultName:e,nextLoc:r},"next"===this.method&&(this.arg=n),m}}}function b(t,e,n,r){var i=e&&e.prototype instanceof w?e:w,o=Object.create(i.prototype),s=new O(r||[]);return o._invoke=function(t,e,n){var r=f;return function(i,o){if(r===d)throw new Error("Generator is already running");if(r===h){if("throw"===i)throw o;return R()}for(n.method=i,n.arg=o;;){var s=n.delegate;if(s){var a=E(s,n);if(a){if(a===m)continue;return a}}if("next"===n.method)n.sent=n._sent=n.arg;else if("throw"===n.method){if(r===f)throw r=h,n.arg;n.dispatchException(n.arg)}else"return"===n.method&&n.abrupt("return",n.arg);r=d;var u=x(t,e,n);if("normal"===u.type){if(r=n.done?h:p,u.arg===m)continue;return{value:u.arg,done:n.done}}"throw"===u.type&&(r=h,n.method="throw",n.arg=u.arg)}}}(t,n,s),o}function x(t,e,n){try{return{type:"normal",arg:t.call(e,n)}}catch(t){return{type:"throw",arg:t}}}function w(){}function k(){}function S(){}function N(t){["next","throw","return"].forEach(function(e){t[e]=function(t){return this._invoke(e,t)}})}function C(t){var e;this._invoke=function(n,r){function o(){return new Promise(function(e,o){!function e(n,r,o,s){var a=x(t[n],t,r);if("throw"!==a.type){var u=a.arg,c=u.value;return c&&"object"==typeof c&&i.call(c,"__await")?Promise.resolve(c.__await).then(function(t){e("next",t,o,s)},function(t){e("throw",t,o,s)}):Promise.resolve(c).then(function(t){u.value=t,o(u)},s)}s(a.arg)}(n,r,e,o)})}return e=e?e.then(o,o):o()}}function E(t,e){var r=t.iterator[e.method];if(r===n){if(e.delegate=null,"throw"===e.method){if(t.iterator.return&&(e.method="return",e.arg=n,E(t,e),"throw"===e.method))return m;e.method="throw",e.arg=new TypeError("The iterator does not provide a 'throw' method")}return m}var i=x(r,t.iterator,e.arg);if("throw"===i.type)return e.method="throw",e.arg=i.arg,e.delegate=null,m;var o=i.arg;return o?o.done?(e[t.resultName]=o.value,e.next=t.nextLoc,"return"!==e.method&&(e.method="next",e.arg=n),e.delegate=null,m):o:(e.method="throw",e.arg=new TypeError("iterator result is not an object"),e.delegate=null,m)}function L(t){var e={tryLoc:t[0]};1 in t&&(e.catchLoc=t[1]),2 in t&&(e.finallyLoc=t[2],e.afterLoc=t[3]),this.tryEntries.push(e)}function I(t){var e=t.completion||{};e.type="normal",delete e.arg,t.completion=e}function O(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(L,this),this.reset(!0)}function $(t){if(t){var e=t[s];if(e)return e.call(t);if("function"==typeof t.next)return t;if(!isNaN(t.length)){var r=-1,o=function e(){for(;++r<t.length;)if(i.call(t,r))return e.value=t[r],e.done=!1,e;return e.value=n,e.done=!0,e};return o.next=o}}return{next:R}}function R(){return{value:n,done:!0}}}(function(){return this}()||Function("return this")())},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",[n("panel-item",{attrs:{field:t.warehouse}}),t._v(" "),n("panel-item",{staticClass:"border-none",attrs:{field:t.address}}),t._v(" "),n("button",{staticClass:"flex-no-shrink ml-auto w-full btn btn-default btn-primary inline-flex justify-center items-center",on:{click:function(e){return e.preventDefault(),t.goShipment(e)}}},[n("svg",{staticClass:"fill-current w-4 h-4 mr-1",attrs:{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",width:"24",height:"24"}},[n("path",{staticClass:"heroicon-ui",attrs:{d:"M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-2.3-8.7l1.3 1.29 3.3-3.3a1 1 0 0 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-2-2a1 1 0 0 1 1.4-1.42z"}})]),t._v(" "),n("span",[t._v(t._s(t.btnTitle))])])],1)},staticRenderFns:[]}},function(t,e,n){var r=n(0)(n(23),n(24),!1,function(t){n(21)},"data-v-32bd9dde",null);t.exports=r.exports},function(t,e,n){var r=n(22);"string"==typeof r&&(r=[[t.i,r,""]]),r.locals&&(t.exports=r.locals);n(3)("3446c7ca",r,!0,{})},function(t,e,n){(t.exports=n(2)(!1)).push([t.i,"",""])},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=n(1),i=n.n(r),o=n(4);e.default={name:"inventory-expends",mixins:[o.a],methods:{goShipment:function(){var t=this.$route.params,e=t.resourceName,n=t.resourceId;!this.authorizedToUpdate||this.alreadyShipped?this.$router.push({name:"shipment.detail",params:{resourceName:e,resourceId:n}}):this.$router.push({name:"shipment.update",params:{resourceName:e,resourceId:n}})}},created:function(){var t,e=(t=i.a.mark(function t(){return i.a.wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,this.fetchResource();case 2:this.resource=t.sent,this.setAddress();case 4:case"end":return t.stop()}},t,this)}),function(){var e=t.apply(this,arguments);return new Promise(function(t,n){return function r(i,o){try{var s=e[i](o),a=s.value}catch(t){return void n(t)}if(!s.done)return Promise.resolve(a).then(function(t){r("next",t)},function(t){r("throw",t)});t(a)}("next")})});return function(){return e.apply(this,arguments)}}()}},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",[n("panel-item",{attrs:{field:t.warehouse}}),t._v(" "),n("panel-item",{staticClass:"border-none",attrs:{field:t.address}}),t._v(" "),n("button",{staticClass:"flex-no-shrink ml-auto w-full btn btn-default btn-primary inline-flex justify-center items-center",on:{click:function(e){return e.preventDefault(),t.goShipment(e)}}},[n("svg",{staticClass:"fill-current w-4 h-4 mr-1",attrs:{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",width:"24",height:"24"}},[n("path",{staticClass:"heroicon-ui",attrs:{d:"M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-2.3-8.7l1.3 1.29 3.3-3.3a1 1 0 0 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-2-2a1 1 0 0 1 1.4-1.42z"}})]),t._v(" "),n("span",[t._v("查看物流")])])],1)},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this.$createElement;return(this._self._c||t)(this.resourceName,{tag:"component",attrs:{resourceName:this.resourceName,resourceId:this.resourceId,field:this.field}})},staticRenderFns:[]}},function(t,e,n){var r=n(0)(n(29),n(38),!1,function(t){n(27)},"data-v-39f15b11",null);t.exports=r.exports},function(t,e,n){var r=n(28);"string"==typeof r&&(r=[[t.i,r,""]]),r.locals&&(t.exports=r.locals);n(3)("1b1b824e",r,!0,{})},function(t,e,n){(t.exports=n(2)(!1)).push([t.i,"",""])},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=n(1),i=n.n(r),o=n(4),s=n(6),a=n.n(s),u=n(5),c=n.n(u);e.default={name:"shipment-detail",mixins:[o.a],components:{VariantListTable:a.a,TrackNumberInput:c.a},created:function(){var t,e=(t=i.a.mark(function t(){return i.a.wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,this.fetchResource();case 2:this.resource=t.sent,this.setAddress(),this.initialLoading=!1;case 5:case"end":return t.stop()}},t,this)}),function(){var e=t.apply(this,arguments);return new Promise(function(t,n){return function r(i,o){try{var s=e[i](o),a=s.value}catch(t){return void n(t)}if(!s.done)return Promise.resolve(a).then(function(t){r("next",t)},function(t){r("throw",t)});t(a)}("next")})});return function(){return e.apply(this,arguments)}}()}},function(t,e,n){var r=n(31);"string"==typeof r&&(r=[[t.i,r,""]]),r.locals&&(t.exports=r.locals);n(3)("0137f4df",r,!0,{})},function(t,e,n){(t.exports=n(2)(!1)).push([t.i,"",""])},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=n(1),i=n.n(r),o=n(5),s=n.n(o),a=n(7);e.default={name:"variant-list-table",mixins:[a.a],props:{items:{type:Array,default:function(){return[]}},detail:{type:Boolean,default:!1}},data:function(){return{shipments:{},multipleSelection:[],dialogVisible:!1}},watch:{allShipped:function(t){t&&this.$emit("all-shipped-change")}},methods:{unitShipment:function(t,e){var n=_.cloneDeep(t);n.units=t.units.filter(function(t){return t===e}),this.$emit("shipment",[n])},checkShipment:function(t){return new Promise(function(e,n){t.logistic_id&&t.tracking_number?e():n("信息不完整，无法填充")})},fillSub:function(t,e){var n=this;this.checkShipment(t).then(function(){e.units.forEach(function(e){_.isNull(e.shipment_track_id)&&(e.shipment=Object.assign({},e.shipment,t),Nova.$emit("track-number-item-"+e.id+"-change",t))}),n.$message({message:e.variant.variantName+" 物流信息填充完成",type:"success"})}).catch(function(t){n.$message({message:t,type:"error"})})},fill:function(t){var e=this;this.checkShipment(t).then(function(){0!==e.multipleSelection.length?e.multipleSelection.forEach(function(n){e.fillSub(t,n)}):e.$message({message:"请勾选变体",type:"error"})}).catch(function(t){e.$message({message:t,type:"error"})})},initShipments:function(){var t=this;this.shipments={},this.items.forEach(function(e){t.$set(t.shipments,e.id,{logistic_id:null,tracking_number:""})})},handleSelectionChange:function(t){this.multipleSelection=t},isSelected:function(t){return this.multipleSelection.find(function(e){return e.id===t.id})},shippedCount:function(t){return t.units.filter(function(t){return!_.isNull(t.shipment_track_id)}).length},shipmentFillCount:function(t){return t.units.filter(function(t){return!_.isEmpty(t.shipment.tracking_number)}).length},openTrackNumberDetailModal:function(){}},components:{TrackNumberInput:s.a},computed:{allShipped:function(){return _.every(this.items.reduce(function(t,e){return t.push.apply(t,function(t){if(Array.isArray(t)){for(var e=0,n=Array(t.length);e<t.length;e++)n[e]=t[e];return n}return Array.from(t)}(e.units)),t},[]),function(t){return!_.isNull(t.shipment_track_id)})},itemIsShipped:function(){return function(t){return _.every(t.units,function(t){return!_.isNull(t.shipment_track_id)})}}},mounted:function(){var t,e=(t=i.a.mark(function t(){return i.a.wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,this.initLogistics();case 2:this.initShipments();case 3:case"end":return t.stop()}},t,this)}),function(){var e=t.apply(this,arguments);return new Promise(function(t,n){return function r(i,o){try{var s=e[i](o),a=s.value}catch(t){return void n(t)}if(!s.done)return Promise.resolve(a).then(function(t){r("next",t)},function(t){r("throw",t)});t(a)}("next")})});return function(){return e.apply(this,arguments)}}()}},function(t,e,n){var r=n(34);"string"==typeof r&&(r=[[t.i,r,""]]),r.locals&&(t.exports=r.locals);n(3)("a41ff2ee",r,!0,{})},function(t,e,n){(t.exports=n(2)(!1)).push([t.i,".el-select .el-input{min-width:120px}.input-with-select .el-input-group__prepend{background-color:#fff}",""])},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=n(1),i=n.n(r),o=n(7);e.default={name:"track-number-input",mixins:[o.a],props:{logistics:{type:Array,default:function(){return[]}},shipment:{type:Object,default:function(){return{id:null,logistic_id:null,tracking_number:""}}},eventKey:{type:String},disabled:{type:Boolean,default:!1}},data:function(){return{logistic_id:"",tracking_number:""}},methods:{initValue:function(t){var e=t.logistic_id,n=t.tracking_number;this.logistic_id=e,this.tracking_number=n},changeInput:function(t){this.shipment.tracking_number=t},changeSelect:function(t){console.log(t),this.shipment.logistic_id=t},getValue:function(){return this.currentShipment}},computed:{list:function(){return this.logistics||this.logisticOptions},currentShipment:function(){return{logistic_id:this.logistic_id,tracking_number:this.tracking_number}},currentLogisticName:function(){return _.get(_.find(this.list,["id",this.logistic_id]),"name","-")}},mounted:function(){var t,e=(t=i.a.mark(function t(){var e=this;return i.a.wrap(function(t){for(;;)switch(t.prev=t.next){case 0:this.initValue(this.shipment),Nova.$on(this.eventKey,function(t){e.initValue(t)});case 2:case"end":return t.stop()}},t,this)}),function(){var e=t.apply(this,arguments);return new Promise(function(t,n){return function r(i,o){try{var s=e[i](o),a=s.value}catch(t){return void n(t)}if(!s.done)return Promise.resolve(a).then(function(t){r("next",t)},function(t){r("throw",t)});t(a)}("next")})});return function(){return e.apply(this,arguments)}}(),destroyed:function(){Nova.$off(this.eventKey)}}},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",[t.disabled?n("div",{staticClass:"flex items-center"},[n("div",{staticClass:"w-2/5 py-3"},[n("span",{staticClass:"inline-block   py-1 text-80 text-sm"},[t._v("\n            "+t._s(t.currentLogisticName)+"\n        ")])]),t._v(" "),n("div",{staticClass:"w-3/5 py-3 px-8"},[n("span",{staticClass:"inline-block  px-3 py-1 text-80 text-sm"},[t._v(t._s(t.tracking_number))])])]):n("el-input",{staticClass:"input-with-select",attrs:{placeholder:"请输入物流单号"},on:{change:t.changeInput},model:{value:t.tracking_number,callback:function(e){t.tracking_number=e},expression:"tracking_number"}},[n("el-select",{attrs:{slot:"prepend",disabled:t.disabled,filterable:"",placeholder:"请选择物流公司"},on:{change:t.changeSelect},slot:"prepend",model:{value:t.logistic_id,callback:function(e){t.logistic_id=e},expression:"logistic_id"}},t._l(t.list,function(t){return n("el-option",{key:t.code,attrs:{label:t.name,value:t.id}})}),1),t._v(" "),t._t("default",null,{slot:"append",disabled:t.disabled,shipment:t.currentShipment})],2)],1)},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",[n("el-table",{ref:"variantTable",staticStyle:{width:"100%"},attrs:{data:t.items,"row-key":"id"},on:{"selection-change":t.handleSelectionChange}},[n("el-table-column",{attrs:{type:"selection",label:"ID",prop:"id"}}),t._v(" "),n("el-table-column",{attrs:{type:"expand"},scopedSlots:t._u([{key:"default",fn:function(e){return[t.detail?t._e():n("el-alert",{attrs:{title:"可以为单个SKU最小单位拆分物流",type:"info","close-text":"知道了"}}),t._v(" "),n("card",{staticClass:"overflow-hidden border border-50 mb-6 my-3"},[n("el-table",{staticStyle:{width:"100%"},attrs:{data:e.row.units}},[n("el-table-column",{attrs:{type:"index",width:"50"}}),t._v(" "),n("el-table-column",{attrs:{label:"物流单号","min-width":"150"},scopedSlots:t._u([{key:"default",fn:function(e){e.$index;var r=e.row;return[n("track-number-input",{attrs:{"event-key":"track-number-item-"+r.id+"-change",shipment:r.shipment,logistics:t.logisticOptions,disabled:!!r.shipment_track_id||t.detail}})]}}])}),t._v(" "),n("el-table-column",{attrs:{label:"操作",align:"right","min-width":"50"},scopedSlots:t._u([{key:"default",fn:function(r){r.$index;var i=r.row;return[i.shipment_track_id||t.detail?n("span",[n("button",{staticClass:"appearance-none focus:outline-none cursor-pointer text-70 hover:text-primary",on:{click:function(e){return e.preventDefault(),t.openTrackNumberDetailModal(e)}}},[n("icon",{attrs:{type:"view",width:"22",height:"18","view-box":"0 0 22 16"}})],1)]):n("el-button",{attrs:{type:"primary",size:"small"},on:{click:function(n){t.unitShipment(e.row,i)}}},[t._v("\n                                    发货\n                                ")])]}}])})],1)],1)]}}])}),t._v(" "),n("el-table-column",{attrs:{label:"商品名称",prop:"variant.variantName"}}),t._v(" "),n("el-table-column",{attrs:{label:"数量","min-width":"60",prop:"pcs"}}),t._v(" "),t.detail?t._e():n("el-table-column",{attrs:{label:"已发货","min-width":"60"},scopedSlots:t._u([{key:"default",fn:function(e){e.$index;var n=e.row;return[t._v("\n                "+t._s(t.shippedCount(n))+"\n            ")]}}])}),t._v(" "),t.detail?t._e():n("el-table-column",{attrs:{label:"已填单号","min-width":"60"},scopedSlots:t._u([{key:"default",fn:function(e){e.$index;var n=e.row;return[t._v("\n                "+t._s(t.shipmentFillCount(n))+"\n            ")]}}])}),t._v(" "),t.detail?t._e():n("el-table-column",{attrs:{label:"一键填充","min-width":"150"},scopedSlots:t._u([{key:"default",fn:function(e){e.$index;var r=e.row;return[t.itemIsShipped(r)?n("span",[t._v("该项目已完成发货")]):n("track-number-input",{attrs:{logistics:t.logisticOptions},scopedSlots:t._u([{key:"default",fn:function(e){var i=e.shipment,o=e.disabled;return[n("button",{staticClass:"appearance-none focus:outline-none cursor-pointer text-70 hover:text-primary",attrs:{disabled:o},on:{click:function(e){e.preventDefault(),t.fillSub(i,r)}}},[n("icon",{attrs:{type:"edit"}})],1)]}}]),model:{value:t.shipments[r.id],callback:function(e){t.$set(t.shipments,r.id,e)},expression:"shipments[row.id]"}})]}}])}),t._v(" "),t.detail?t._e():n("el-table-column",{attrs:{label:"操作",align:"right","min-width":"50"},scopedSlots:t._u([{key:"default",fn:function(e){e.$index;var r=e.row;return[n("el-button",{attrs:{disabled:t.itemIsShipped(r),type:"primary",size:"medium"},on:{click:function(e){t.$emit("shipment",[r])}}},[t._v("批量发货\n                ")])]}}])})],1),t._v(" "),t.detail?t._e():n("div",{staticClass:"bg-30 flex py-4 px-6"},[t.allShipped?n("span",{staticClass:"ml-auto text-80 font-normal"},[t._v("发货已完成！")]):[n("track-number-input",{staticClass:"ml-auto mr-3",staticStyle:{width:"50%"},attrs:{logistics:t.logisticOptions},scopedSlots:t._u([{key:"default",fn:function(e){var r=e.shipment;return e.disabled,[n("button",{staticClass:"appearance-none cursor-pointer text-70 hover:text-primary",on:{click:function(e){e.preventDefault(),t.fill(r)}}},[n("icon",{attrs:{type:"edit"}})],1)]}}])}),t._v(" "),n("el-button",{attrs:{type:"primary"},on:{click:function(e){t.$emit("shipment",t.items)}}},[t._v("批量发货")])]],2)],1)},staticRenderFns:[]}},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("loading-view",{attrs:{loading:t.initialLoading}},[n("heading",{staticClass:"mb-3"},[t._v("Address")]),t._v(" "),n("card",{staticClass:"overflow-hidden border border-50 mb-6"},[n("div",{staticClass:"py-3 px-6"},[n("panel-item",{attrs:{field:t.warehouse}}),t._v(" "),n("panel-item",{staticClass:"border-none",attrs:{field:t.address}})],1)]),t._v(" "),n("heading",{staticClass:"mb-3"},[t._v("Send Shipment Edit")]),t._v(" "),n("card",{staticClass:"overflow-hidden border border-50 mb-6"},[n("variant-list-table",{attrs:{items:t.resource.items,detail:""},on:{shipment:t.shipment}})],1)],1)},staticRenderFns:[]}},function(t,e,n){var r=n(0)(n(42),n(43),!1,function(t){n(40)},null,null);t.exports=r.exports},function(t,e,n){var r=n(41);"string"==typeof r&&(r=[[t.i,r,""]]),r.locals&&(t.exports=r.locals);n(3)("01de733d",r,!0,{})},function(t,e,n){(t.exports=n(2)(!1)).push([t.i,"",""])},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=n(1),i=n.n(r),o=n(4),s=n(6),a=n.n(s),u=n(5),c=n.n(u);e.default={name:"shipment-update",mixins:[o.a],components:{VariantListTable:a.a,TrackNumberInput:c.a},methods:{shipment:function(t){var e=this;Nova.request().post(this.shipmentApi,this.filterItemShipped(t)).then(function(t){var n=t.data,r=n.data,i=function(t,e){var n={};for(var r in t)e.indexOf(r)>=0||Object.prototype.hasOwnProperty.call(t,r)&&(n[r]=t[r]);return n}(n,["data"]);e.handleChange(r),e.$notify(i)})},allShippedChange:function(){this.$router.replace({name:"shipment.detail",params:{resourceName:this.resourceName,resourceId:this.resourceId}})},filterItemShipped:function(t){return t.map(function(t){var e=_.cloneDeep(t);return e.units=e.units.filter(function(t){return _.isNull(t.shipment_track_id)}),{id:e.id,inventory_income_id:e.inventory_income_id,units:e.units}})},handleChange:function(t){var e=this;t.forEach(function(t){var n=_.find(e.resource.items,["id",t.id]);n.units.forEach(function(e,r){var i=t.units.find(function(t){return t.id===e.id});i&&n.units.splice(r,1,i)})})}},created:function(){var t,e=(t=i.a.mark(function t(){return i.a.wrap(function(t){for(;;)switch(t.prev=t.next){case 0:return t.next=2,this.fetchResource();case 2:this.resource=t.sent,this.initItemUnit(),this.setAddress(),this.initialLoading=!1;case 6:case"end":return t.stop()}},t,this)}),function(){var e=t.apply(this,arguments);return new Promise(function(t,n){return function r(i,o){try{var s=e[i](o),a=s.value}catch(t){return void n(t)}if(!s.done)return Promise.resolve(a).then(function(t){r("next",t)},function(t){r("throw",t)});t(a)}("next")})});return function(){return e.apply(this,arguments)}}()}},function(t,e){t.exports={render:function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("loading-view",{attrs:{loading:t.initialLoading}},[n("heading",{staticClass:"mb-3"},[t._v("Address")]),t._v(" "),n("card",{staticClass:"overflow-hidden border border-50 mb-6"},[n("div",{staticClass:"py-3 px-6"},[n("panel-item",{attrs:{field:t.warehouse}}),t._v(" "),n("panel-item",{staticClass:"border-none",attrs:{field:t.address}})],1)]),t._v(" "),n("heading",{staticClass:"mb-3"},[t._v("Send Shipment Edit")]),t._v(" "),n("card",{staticClass:"overflow-hidden border border-50 mb-6"},[n("variant-list-table",{attrs:{items:t.resource.items},on:{"all-shipped-change":t.allShippedChange,shipment:t.shipment}})],1)],1)},staticRenderFns:[]}},function(t,e){}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
+
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file.
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(17);
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+  Modified by Evan You @yyx990803
+*/
+
+var hasDocument = typeof document !== 'undefined'
+
+if (typeof DEBUG !== 'undefined' && DEBUG) {
+  if (!hasDocument) {
+    throw new Error(
+    'vue-style-loader cannot be used in a non-browser environment. ' +
+    "Use { target: 'node' } in your Webpack config to indicate a server-rendering environment."
+  ) }
+}
+
+var listToStyles = __webpack_require__(15)
+
+/*
+type StyleObject = {
+  id: number;
+  parts: Array<StyleObjectPart>
+}
+
+type StyleObjectPart = {
+  css: string;
+  media: string;
+  sourceMap: ?string
+}
+*/
+
+var stylesInDom = {/*
+  [id: number]: {
+    id: number,
+    refs: number,
+    parts: Array<(obj?: StyleObjectPart) => void>
+  }
+*/}
+
+var head = hasDocument && (document.head || document.getElementsByTagName('head')[0])
+var singletonElement = null
+var singletonCounter = 0
+var isProduction = false
+var noop = function () {}
+var options = null
+var ssrIdKey = 'data-vue-ssr-id'
+
+// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+// tags it will allow on a page
+var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
+
+module.exports = function (parentId, list, _isProduction, _options) {
+  isProduction = _isProduction
+
+  options = _options || {}
+
+  var styles = listToStyles(parentId, list)
+  addStylesToDom(styles)
+
+  return function update (newList) {
+    var mayRemove = []
+    for (var i = 0; i < styles.length; i++) {
+      var item = styles[i]
+      var domStyle = stylesInDom[item.id]
+      domStyle.refs--
+      mayRemove.push(domStyle)
+    }
+    if (newList) {
+      styles = listToStyles(parentId, newList)
+      addStylesToDom(styles)
+    } else {
+      styles = []
+    }
+    for (var i = 0; i < mayRemove.length; i++) {
+      var domStyle = mayRemove[i]
+      if (domStyle.refs === 0) {
+        for (var j = 0; j < domStyle.parts.length; j++) {
+          domStyle.parts[j]()
+        }
+        delete stylesInDom[domStyle.id]
+      }
+    }
+  }
+}
+
+function addStylesToDom (styles /* Array<StyleObject> */) {
+  for (var i = 0; i < styles.length; i++) {
+    var item = styles[i]
+    var domStyle = stylesInDom[item.id]
+    if (domStyle) {
+      domStyle.refs++
+      for (var j = 0; j < domStyle.parts.length; j++) {
+        domStyle.parts[j](item.parts[j])
+      }
+      for (; j < item.parts.length; j++) {
+        domStyle.parts.push(addStyle(item.parts[j]))
+      }
+      if (domStyle.parts.length > item.parts.length) {
+        domStyle.parts.length = item.parts.length
+      }
+    } else {
+      var parts = []
+      for (var j = 0; j < item.parts.length; j++) {
+        parts.push(addStyle(item.parts[j]))
+      }
+      stylesInDom[item.id] = { id: item.id, refs: 1, parts: parts }
+    }
+  }
+}
+
+function createStyleElement () {
+  var styleElement = document.createElement('style')
+  styleElement.type = 'text/css'
+  head.appendChild(styleElement)
+  return styleElement
+}
+
+function addStyle (obj /* StyleObjectPart */) {
+  var update, remove
+  var styleElement = document.querySelector('style[' + ssrIdKey + '~="' + obj.id + '"]')
+
+  if (styleElement) {
+    if (isProduction) {
+      // has SSR styles and in production mode.
+      // simply do nothing.
+      return noop
+    } else {
+      // has SSR styles but in dev mode.
+      // for some reason Chrome can't handle source map in server-rendered
+      // style tags - source maps in <style> only works if the style tag is
+      // created and inserted dynamically. So we remove the server rendered
+      // styles and inject new ones.
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  if (isOldIE) {
+    // use singleton mode for IE9.
+    var styleIndex = singletonCounter++
+    styleElement = singletonElement || (singletonElement = createStyleElement())
+    update = applyToSingletonTag.bind(null, styleElement, styleIndex, false)
+    remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true)
+  } else {
+    // use multi-style-tag mode in all other cases
+    styleElement = createStyleElement()
+    update = applyToTag.bind(null, styleElement)
+    remove = function () {
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  update(obj)
+
+  return function updateStyle (newObj /* StyleObjectPart */) {
+    if (newObj) {
+      if (newObj.css === obj.css &&
+          newObj.media === obj.media &&
+          newObj.sourceMap === obj.sourceMap) {
+        return
+      }
+      update(obj = newObj)
+    } else {
+      remove()
+    }
+  }
+}
+
+var replaceText = (function () {
+  var textStore = []
+
+  return function (index, replacement) {
+    textStore[index] = replacement
+    return textStore.filter(Boolean).join('\n')
+  }
+})()
+
+function applyToSingletonTag (styleElement, index, remove, obj) {
+  var css = remove ? '' : obj.css
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = replaceText(index, css)
+  } else {
+    var cssNode = document.createTextNode(css)
+    var childNodes = styleElement.childNodes
+    if (childNodes[index]) styleElement.removeChild(childNodes[index])
+    if (childNodes.length) {
+      styleElement.insertBefore(cssNode, childNodes[index])
+    } else {
+      styleElement.appendChild(cssNode)
+    }
+  }
+}
+
+function applyToTag (styleElement, obj) {
+  var css = obj.css
+  var media = obj.media
+  var sourceMap = obj.sourceMap
+
+  if (media) {
+    styleElement.setAttribute('media', media)
+  }
+  if (options.ssrId) {
+    styleElement.setAttribute(ssrIdKey, obj.id)
+  }
+
+  if (sourceMap) {
+    // https://developer.chrome.com/devtools/docs/javascript-debugging
+    // this makes source maps inside style tags work properly in Chrome
+    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
+    // http://stackoverflow.com/a/26603875
+    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
+  }
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild)
+    }
+    styleElement.appendChild(document.createTextNode(css))
+  }
+}
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+  props: ['resourceName', 'resourceId', 'field'],
+
+  provide: function provide() {
+    return {
+      resourceName: this.resourceName,
+      resourceId: this.resourceId,
+      field: this.field
+    };
+  },
+  data: function data() {
+    return {
+      warehouse: {},
+      resource: {},
+      address: {},
+      initialLoading: true
+    };
+  },
+
+  methods: {
+    fetchResource: function fetchResource() {
+      return Nova.request().get(this.fetchResourceApi).then(function (_ref) {
+        var data = _ref.data;
+
+        return data;
+      }).catch(function (_ref2) {
+        var response = _ref2.response;
+
+        console.error(response);
+      });
+    },
+    setAddress: function setAddress() {
+      var shipment = this.resource.shipment;
+
+      this.warehouse = {
+        name: '收件地址名称',
+        attribute: 'warehouse',
+        value: shipment.name
+      };
+      this.address = {
+        name: '地址',
+        attribute: 'address',
+        value: shipment.simple_address
+      };
+    },
+    initItemUnit: function initItemUnit() {
+      this.resource.items.forEach(function (item) {
+        _.tap(_.get(item, 'units', []), function (units) {
+          units.forEach(function (unit) {
+            if (_.isNull(unit.shipment)) {
+              _.set(unit, 'shipment', { id: null, logistic_id: null, tracking_number: '' });
+            }
+          });
+        });
+      });
+    }
+  },
+
+  computed: {
+    fetchResourceApi: function fetchResourceApi() {
+      return Nova.config['erp-prefix'] + '/' + this.resourceName + '/' + this.resourceId;
+    },
+    toName: function toName() {
+      return _.get(this.resource, 'warehouse.name', '');
+    },
+
+    // 是否已完成发货
+    alreadyShipped: function alreadyShipped() {
+      return _.get(this.field, 'shipped');
+    },
+
+    // 发货请求api
+    shipmentApi: function shipmentApi() {
+      return Nova.config['erp-prefix'] + '/' + this.resourceName + '/' + this.resourceId + '/shipment';
+    },
+    authorizedToUpdate: function authorizedToUpdate() {
+      return _.get(this, 'field.authorizedToUpdate', false);
+    }
+  }
+});
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(33)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(35)
+/* template */
+var __vue_template__ = __webpack_require__(36)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/TrackNumberInput.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-405a8321", Component.options)
+  } else {
+    hotAPI.reload("data-v-405a8321", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(30)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(32)
+/* template */
+var __vue_template__ = __webpack_require__(37)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-eac55094"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/VariantListTable.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-eac55094", Component.options)
+  } else {
+    hotAPI.reload("data-v-eac55094", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
+
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  props: {
+    logistics: {
+      type: Array,
+      default: function _default() {
+        return [];
+      }
+    }
+  },
+  data: function data() {
+    return {
+      logisticOptions: []
+    };
+  },
+
+  methods: {
+    getLogisticsList: function getLogisticsList() {
+      return Nova.request().get(this.logisticsApi).then(function (_ref) {
+        var data = _ref.data;
+
+        return data;
+      }).catch(function (err) {
+        console.error(err.response);
+      });
+    },
+    initLogistics: function () {
+      var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (!(this.logistics.length <= 0)) {
+                  _context.next = 4;
+                  break;
+                }
+
+                _context.next = 3;
+                return this.getLogisticsList();
+
+              case 3:
+                this.logisticOptions = _context.sent;
+
+              case 4:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function initLogistics() {
+        return _ref2.apply(this, arguments);
+      }
+
+      return initLogistics;
+    }()
+  },
+  computed: {
+    logisticsApi: function logisticsApi() {
+      return Nova.config['erp-prefix'] + '/logistics';
+    }
+  }
+});
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(9);
+module.exports = __webpack_require__(44);
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Nova.booting(function (Vue, router) {
+  Vue.component('send-shipment-tool', __webpack_require__(10));
+
+  router.addRoutes([{
+    name: 'shipment.detail',
+    path: '/resources/:resourceName/:resourceId/shipment',
+    component: __webpack_require__(26),
+    props: function props(route) {
+      return {
+        resourceName: route.params.resourceName,
+        resourceId: route.params.resourceId
+      };
+    }
+  }, {
+    name: 'shipment.update',
+    path: '/resources/:resourceName/:resourceId/shipment/edit',
+    component: __webpack_require__(39),
+    props: function props(route) {
+      return {
+        resourceName: route.params.resourceName,
+        resourceId: route.params.resourceId
+      };
+    }
+  }]);
+});
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(11)
+/* template */
+var __vue_template__ = __webpack_require__(25)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/Tool.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-68ff5483", Component.options)
+  } else {
+    hotAPI.reload("data-v-68ff5483", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__InventoryIncomes__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__InventoryIncomes___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__InventoryIncomes__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__InventoryExpends__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__InventoryExpends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__InventoryExpends__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['resourceName', 'resourceId', 'field', 'resource'],
+
+  components: {
+    InventoryIncomes: __WEBPACK_IMPORTED_MODULE_0__InventoryIncomes___default.a,
+    InventoryExpends: __WEBPACK_IMPORTED_MODULE_1__InventoryExpends___default.a
+  }
+});
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(13)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(16)
+/* template */
+var __vue_template__ = __webpack_require__(19)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-f983034e"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/InventoryIncomes.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-f983034e", Component.options)
+  } else {
+    hotAPI.reload("data-v-f983034e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(14);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("8c6d798e", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f983034e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./InventoryIncomes.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f983034e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./InventoryIncomes.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+/**
+ * Translates the list format produced by css-loader into something
+ * easier to manipulate.
+ */
+module.exports = function listToStyles (parentId, list) {
+  var styles = []
+  var newStyles = {}
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i]
+    var id = item[0]
+    var css = item[1]
+    var media = item[2]
+    var sourceMap = item[3]
+    var part = {
+      id: parentId + ':' + i,
+      css: css,
+      media: media,
+      sourceMap: sourceMap
+    }
+    if (!newStyles[id]) {
+      styles.push(newStyles[id] = { id: id, parts: [part] })
+    } else {
+      newStyles[id].parts.push(part)
+    }
+  }
+  return styles
+}
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helper__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__toPut__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__toPut___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__toPut__);
+
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'inventory-incomes',
+  mixins: [__WEBPACK_IMPORTED_MODULE_1__helper__["a" /* default */]],
+
+  components: {
+    toPut: __WEBPACK_IMPORTED_MODULE_2__toPut___default.a
+  },
+  methods: {
+    goShipment: function goShipment() {
+      var _$route$params = this.$route.params,
+          resourceName = _$route$params.resourceName,
+          resourceId = _$route$params.resourceId;
+
+      this.alreadyShipped ? this.$router.push({
+        name: 'shipment.detail', params: {
+          resourceName: resourceName,
+          resourceId: resourceId
+        }
+      }) : this.$router.push({
+        name: 'shipment.update', params: {
+          resourceName: resourceName,
+          resourceId: resourceId
+        }
+      });
+    }
+  },
+  computed: {
+    btnTitle: function btnTitle() {
+      return this.alreadyShipped ? '物流详情' : '发货';
+    },
+    slot: function slot() {
+      return _.get(this, 'field.slot', false);
+    }
+  },
+  created: function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
+      return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return this.fetchResource();
+
+            case 2:
+              this.resource = _context.sent;
+
+              this.setAddress();
+
+            case 4:
+            case 'end':
+              return _context.stop();
+          }
+        }
+      }, _callee, this);
+    }));
+
+    function created() {
+      return _ref.apply(this, arguments);
+    }
+
+    return created;
+  }()
+});
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+// This method of obtaining a reference to the global object needs to be
+// kept identical to the way it is obtained in runtime.js
+var g = (function() { return this })() || Function("return this")();
+
+// Use `getOwnPropertyNames` because not all browsers support calling
+// `hasOwnProperty` on the global `self` object in a worker. See #183.
+var hadRuntime = g.regeneratorRuntime &&
+  Object.getOwnPropertyNames(g).indexOf("regeneratorRuntime") >= 0;
+
+// Save the old regeneratorRuntime in case it needs to be restored later.
+var oldRuntime = hadRuntime && g.regeneratorRuntime;
+
+// Force reevalutation of runtime.js.
+g.regeneratorRuntime = undefined;
+
+module.exports = __webpack_require__(18);
+
+if (hadRuntime) {
+  // Restore the original runtime.
+  g.regeneratorRuntime = oldRuntime;
+} else {
+  // Remove the global property added by runtime.js.
+  try {
+    delete g.regeneratorRuntime;
+  } catch(e) {
+    g.regeneratorRuntime = undefined;
+  }
+}
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+!(function(global) {
+  "use strict";
+
+  var Op = Object.prototype;
+  var hasOwn = Op.hasOwnProperty;
+  var undefined; // More compressible than void 0.
+  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+
+  var inModule = typeof module === "object";
+  var runtime = global.regeneratorRuntime;
+  if (runtime) {
+    if (inModule) {
+      // If regeneratorRuntime is defined globally and we're in a module,
+      // make the exports object identical to regeneratorRuntime.
+      module.exports = runtime;
+    }
+    // Don't bother evaluating the rest of this file if the runtime was
+    // already defined globally.
+    return;
+  }
+
+  // Define the runtime globally (as expected by generated code) as either
+  // module.exports (if we're in a module) or a new, empty object.
+  runtime = global.regeneratorRuntime = inModule ? module.exports : {};
+
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    var generator = Object.create(protoGenerator.prototype);
+    var context = new Context(tryLocsList || []);
+
+    // The ._invoke method unifies the implementations of the .next,
+    // .throw, and .return methods.
+    generator._invoke = makeInvokeMethod(innerFn, self, context);
+
+    return generator;
+  }
+  runtime.wrap = wrap;
+
+  // Try/catch helper to minimize deoptimizations. Returns a completion
+  // record like context.tryEntries[i].completion. This interface could
+  // have been (and was previously) designed to take a closure to be
+  // invoked without arguments, but in all the cases we care about we
+  // already have an existing method we want to call, so there's no need
+  // to create a new function object. We can even get away with assuming
+  // the method takes exactly one argument, since that happens to be true
+  // in every case, so we don't have to touch the arguments object. The
+  // only additional allocation required is the completion record, which
+  // has a stable shape and so hopefully should be cheap to allocate.
+  function tryCatch(fn, obj, arg) {
+    try {
+      return { type: "normal", arg: fn.call(obj, arg) };
+    } catch (err) {
+      return { type: "throw", arg: err };
+    }
+  }
+
+  var GenStateSuspendedStart = "suspendedStart";
+  var GenStateSuspendedYield = "suspendedYield";
+  var GenStateExecuting = "executing";
+  var GenStateCompleted = "completed";
+
+  // Returning this object from the innerFn has the same effect as
+  // breaking out of the dispatch switch statement.
+  var ContinueSentinel = {};
+
+  // Dummy constructor functions that we use as the .constructor and
+  // .constructor.prototype properties for functions that return Generator
+  // objects. For full spec compliance, you may wish to configure your
+  // minifier not to mangle the names of these two functions.
+  function Generator() {}
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+
+  // This is a polyfill for %IteratorPrototype% for environments that
+  // don't natively support it.
+  var IteratorPrototype = {};
+  IteratorPrototype[iteratorSymbol] = function () {
+    return this;
+  };
+
+  var getProto = Object.getPrototypeOf;
+  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+  if (NativeIteratorPrototype &&
+      NativeIteratorPrototype !== Op &&
+      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+    // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
+  }
+
+  var Gp = GeneratorFunctionPrototype.prototype =
+    Generator.prototype = Object.create(IteratorPrototype);
+  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
+  GeneratorFunctionPrototype.constructor = GeneratorFunction;
+  GeneratorFunctionPrototype[toStringTagSymbol] =
+    GeneratorFunction.displayName = "GeneratorFunction";
+
+  // Helper for defining the .next, .throw, and .return methods of the
+  // Iterator interface in terms of a single ._invoke method.
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function(method) {
+      prototype[method] = function(arg) {
+        return this._invoke(method, arg);
+      };
+    });
+  }
+
+  runtime.isGeneratorFunction = function(genFun) {
+    var ctor = typeof genFun === "function" && genFun.constructor;
+    return ctor
+      ? ctor === GeneratorFunction ||
+        // For the native GeneratorFunction constructor, the best we can
+        // do is to check its .name property.
+        (ctor.displayName || ctor.name) === "GeneratorFunction"
+      : false;
+  };
+
+  runtime.mark = function(genFun) {
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    } else {
+      genFun.__proto__ = GeneratorFunctionPrototype;
+      if (!(toStringTagSymbol in genFun)) {
+        genFun[toStringTagSymbol] = "GeneratorFunction";
+      }
+    }
+    genFun.prototype = Object.create(Gp);
+    return genFun;
+  };
+
+  // Within the body of any async function, `await x` is transformed to
+  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+  // `hasOwn.call(value, "__await")` to determine if the yielded value is
+  // meant to be awaited.
+  runtime.awrap = function(arg) {
+    return { __await: arg };
+  };
+
+  function AsyncIterator(generator) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+      if (record.type === "throw") {
+        reject(record.arg);
+      } else {
+        var result = record.arg;
+        var value = result.value;
+        if (value &&
+            typeof value === "object" &&
+            hasOwn.call(value, "__await")) {
+          return Promise.resolve(value.__await).then(function(value) {
+            invoke("next", value, resolve, reject);
+          }, function(err) {
+            invoke("throw", err, resolve, reject);
+          });
+        }
+
+        return Promise.resolve(value).then(function(unwrapped) {
+          // When a yielded Promise is resolved, its final value becomes
+          // the .value of the Promise<{value,done}> result for the
+          // current iteration. If the Promise is rejected, however, the
+          // result for this iteration will be rejected with the same
+          // reason. Note that rejections of yielded Promises are not
+          // thrown back into the generator function, as is the case
+          // when an awaited Promise is rejected. This difference in
+          // behavior between yield and await is important, because it
+          // allows the consumer to decide what to do with the yielded
+          // rejection (swallow it and continue, manually .throw it back
+          // into the generator, abandon iteration, whatever). With
+          // await, by contrast, there is no opportunity to examine the
+          // rejection reason outside the generator function, so the
+          // only option is to throw it from the await expression, and
+          // let the generator function handle the exception.
+          result.value = unwrapped;
+          resolve(result);
+        }, reject);
+      }
+    }
+
+    var previousPromise;
+
+    function enqueue(method, arg) {
+      function callInvokeWithMethodAndArg() {
+        return new Promise(function(resolve, reject) {
+          invoke(method, arg, resolve, reject);
+        });
+      }
+
+      return previousPromise =
+        // If enqueue has been called before, then we want to wait until
+        // all previous Promises have been resolved before calling invoke,
+        // so that results are always delivered in the correct order. If
+        // enqueue has not been called before, then it is important to
+        // call invoke immediately, without waiting on a callback to fire,
+        // so that the async generator function has the opportunity to do
+        // any necessary setup in a predictable way. This predictability
+        // is why the Promise constructor synchronously invokes its
+        // executor callback, and why async functions synchronously
+        // execute code before the first await. Since we implement simple
+        // async functions in terms of async generators, it is especially
+        // important to get this right, even though it requires care.
+        previousPromise ? previousPromise.then(
+          callInvokeWithMethodAndArg,
+          // Avoid propagating failures to Promises returned by later
+          // invocations of the iterator.
+          callInvokeWithMethodAndArg
+        ) : callInvokeWithMethodAndArg();
+    }
+
+    // Define the unified helper method that is used to implement .next,
+    // .throw, and .return (see defineIteratorMethods).
+    this._invoke = enqueue;
+  }
+
+  defineIteratorMethods(AsyncIterator.prototype);
+  AsyncIterator.prototype[asyncIteratorSymbol] = function () {
+    return this;
+  };
+  runtime.AsyncIterator = AsyncIterator;
+
+  // Note that simple async functions are implemented on top of
+  // AsyncIterator objects; they just return a Promise for the value of
+  // the final result produced by the iterator.
+  runtime.async = function(innerFn, outerFn, self, tryLocsList) {
+    var iter = new AsyncIterator(
+      wrap(innerFn, outerFn, self, tryLocsList)
+    );
+
+    return runtime.isGeneratorFunction(outerFn)
+      ? iter // If outerFn is a generator, return the full iterator.
+      : iter.next().then(function(result) {
+          return result.done ? result.value : iter.next();
+        });
+  };
+
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = GenStateSuspendedStart;
+
+    return function invoke(method, arg) {
+      if (state === GenStateExecuting) {
+        throw new Error("Generator is already running");
+      }
+
+      if (state === GenStateCompleted) {
+        if (method === "throw") {
+          throw arg;
+        }
+
+        // Be forgiving, per 25.3.3.3.3 of the spec:
+        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+        return doneResult();
+      }
+
+      context.method = method;
+      context.arg = arg;
+
+      while (true) {
+        var delegate = context.delegate;
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
+        }
+
+        if (context.method === "next") {
+          // Setting context._sent for legacy support of Babel's
+          // function.sent implementation.
+          context.sent = context._sent = context.arg;
+
+        } else if (context.method === "throw") {
+          if (state === GenStateSuspendedStart) {
+            state = GenStateCompleted;
+            throw context.arg;
+          }
+
+          context.dispatchException(context.arg);
+
+        } else if (context.method === "return") {
+          context.abrupt("return", context.arg);
+        }
+
+        state = GenStateExecuting;
+
+        var record = tryCatch(innerFn, self, context);
+        if (record.type === "normal") {
+          // If an exception is thrown from innerFn, we leave state ===
+          // GenStateExecuting and loop back for another invocation.
+          state = context.done
+            ? GenStateCompleted
+            : GenStateSuspendedYield;
+
+          if (record.arg === ContinueSentinel) {
+            continue;
+          }
+
+          return {
+            value: record.arg,
+            done: context.done
+          };
+
+        } else if (record.type === "throw") {
+          state = GenStateCompleted;
+          // Dispatch the exception by looping back around to the
+          // context.dispatchException(context.arg) call above.
+          context.method = "throw";
+          context.arg = record.arg;
+        }
+      }
+    };
+  }
+
+  // Call delegate.iterator[context.method](context.arg) and handle the
+  // result, either by returning a { value, done } result from the
+  // delegate iterator, or by modifying context.method and context.arg,
+  // setting context.delegate to null, and returning the ContinueSentinel.
+  function maybeInvokeDelegate(delegate, context) {
+    var method = delegate.iterator[context.method];
+    if (method === undefined) {
+      // A .throw or .return when the delegate iterator has no .throw
+      // method always terminates the yield* loop.
+      context.delegate = null;
+
+      if (context.method === "throw") {
+        if (delegate.iterator.return) {
+          // If the delegate iterator has a return method, give it a
+          // chance to clean up.
+          context.method = "return";
+          context.arg = undefined;
+          maybeInvokeDelegate(delegate, context);
+
+          if (context.method === "throw") {
+            // If maybeInvokeDelegate(context) changed context.method from
+            // "return" to "throw", let that override the TypeError below.
+            return ContinueSentinel;
+          }
+        }
+
+        context.method = "throw";
+        context.arg = new TypeError(
+          "The iterator does not provide a 'throw' method");
+      }
+
+      return ContinueSentinel;
+    }
+
+    var record = tryCatch(method, delegate.iterator, context.arg);
+
+    if (record.type === "throw") {
+      context.method = "throw";
+      context.arg = record.arg;
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    var info = record.arg;
+
+    if (! info) {
+      context.method = "throw";
+      context.arg = new TypeError("iterator result is not an object");
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    if (info.done) {
+      // Assign the result of the finished delegate to the temporary
+      // variable specified by delegate.resultName (see delegateYield).
+      context[delegate.resultName] = info.value;
+
+      // Resume execution at the desired location (see delegateYield).
+      context.next = delegate.nextLoc;
+
+      // If context.method was "throw" but the delegate handled the
+      // exception, let the outer generator proceed normally. If
+      // context.method was "next", forget context.arg since it has been
+      // "consumed" by the delegate iterator. If context.method was
+      // "return", allow the original .return call to continue in the
+      // outer generator.
+      if (context.method !== "return") {
+        context.method = "next";
+        context.arg = undefined;
+      }
+
+    } else {
+      // Re-yield the result returned by the delegate method.
+      return info;
+    }
+
+    // The delegate iterator is finished, so forget it and continue with
+    // the outer generator.
+    context.delegate = null;
+    return ContinueSentinel;
+  }
+
+  // Define Generator.prototype.{next,throw,return} in terms of the
+  // unified ._invoke helper method.
+  defineIteratorMethods(Gp);
+
+  Gp[toStringTagSymbol] = "Generator";
+
+  // A Generator should always return itself as the iterator object when the
+  // @@iterator function is called on it. Some browsers' implementations of the
+  // iterator prototype chain incorrectly implement this, causing the Generator
+  // object to not be returned from this call. This ensures that doesn't happen.
+  // See https://github.com/facebook/regenerator/issues/274 for more details.
+  Gp[iteratorSymbol] = function() {
+    return this;
+  };
+
+  Gp.toString = function() {
+    return "[object Generator]";
+  };
+
+  function pushTryEntry(locs) {
+    var entry = { tryLoc: locs[0] };
+
+    if (1 in locs) {
+      entry.catchLoc = locs[1];
+    }
+
+    if (2 in locs) {
+      entry.finallyLoc = locs[2];
+      entry.afterLoc = locs[3];
+    }
+
+    this.tryEntries.push(entry);
+  }
+
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal";
+    delete record.arg;
+    entry.completion = record;
+  }
+
+  function Context(tryLocsList) {
+    // The root entry object (effectively a try statement without a catch
+    // or a finally block) gives us a place to store values thrown from
+    // locations where there is no enclosing try statement.
+    this.tryEntries = [{ tryLoc: "root" }];
+    tryLocsList.forEach(pushTryEntry, this);
+    this.reset(true);
+  }
+
+  runtime.keys = function(object) {
+    var keys = [];
+    for (var key in object) {
+      keys.push(key);
+    }
+    keys.reverse();
+
+    // Rather than returning an object with a next method, we keep
+    // things simple and return the next function itself.
+    return function next() {
+      while (keys.length) {
+        var key = keys.pop();
+        if (key in object) {
+          next.value = key;
+          next.done = false;
+          return next;
+        }
+      }
+
+      // To avoid creating an additional object, we just hang the .value
+      // and .done properties off the next function object itself. This
+      // also ensures that the minifier will not anonymize the function.
+      next.done = true;
+      return next;
+    };
+  };
+
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+      if (iteratorMethod) {
+        return iteratorMethod.call(iterable);
+      }
+
+      if (typeof iterable.next === "function") {
+        return iterable;
+      }
+
+      if (!isNaN(iterable.length)) {
+        var i = -1, next = function next() {
+          while (++i < iterable.length) {
+            if (hasOwn.call(iterable, i)) {
+              next.value = iterable[i];
+              next.done = false;
+              return next;
+            }
+          }
+
+          next.value = undefined;
+          next.done = true;
+
+          return next;
+        };
+
+        return next.next = next;
+      }
+    }
+
+    // Return an iterator with no values.
+    return { next: doneResult };
+  }
+  runtime.values = values;
+
+  function doneResult() {
+    return { value: undefined, done: true };
+  }
+
+  Context.prototype = {
+    constructor: Context,
+
+    reset: function(skipTempReset) {
+      this.prev = 0;
+      this.next = 0;
+      // Resetting context._sent for legacy support of Babel's
+      // function.sent implementation.
+      this.sent = this._sent = undefined;
+      this.done = false;
+      this.delegate = null;
+
+      this.method = "next";
+      this.arg = undefined;
+
+      this.tryEntries.forEach(resetTryEntry);
+
+      if (!skipTempReset) {
+        for (var name in this) {
+          // Not sure about the optimal order of these conditions:
+          if (name.charAt(0) === "t" &&
+              hasOwn.call(this, name) &&
+              !isNaN(+name.slice(1))) {
+            this[name] = undefined;
+          }
+        }
+      }
+    },
+
+    stop: function() {
+      this.done = true;
+
+      var rootEntry = this.tryEntries[0];
+      var rootRecord = rootEntry.completion;
+      if (rootRecord.type === "throw") {
+        throw rootRecord.arg;
+      }
+
+      return this.rval;
+    },
+
+    dispatchException: function(exception) {
+      if (this.done) {
+        throw exception;
+      }
+
+      var context = this;
+      function handle(loc, caught) {
+        record.type = "throw";
+        record.arg = exception;
+        context.next = loc;
+
+        if (caught) {
+          // If the dispatched exception was caught by a catch block,
+          // then let that catch block handle the exception normally.
+          context.method = "next";
+          context.arg = undefined;
+        }
+
+        return !! caught;
+      }
+
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        var record = entry.completion;
+
+        if (entry.tryLoc === "root") {
+          // Exception thrown outside of any try block that could handle
+          // it, so set the completion value of the entire function to
+          // throw the exception.
+          return handle("end");
+        }
+
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc");
+          var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            } else if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            }
+
+          } else if (hasFinally) {
+            if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else {
+            throw new Error("try statement without catch or finally");
+          }
+        }
+      }
+    },
+
+    abrupt: function(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc <= this.prev &&
+            hasOwn.call(entry, "finallyLoc") &&
+            this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
+          break;
+        }
+      }
+
+      if (finallyEntry &&
+          (type === "break" ||
+           type === "continue") &&
+          finallyEntry.tryLoc <= arg &&
+          arg <= finallyEntry.finallyLoc) {
+        // Ignore the finally entry if control is not jumping to a
+        // location outside the try/catch block.
+        finallyEntry = null;
+      }
+
+      var record = finallyEntry ? finallyEntry.completion : {};
+      record.type = type;
+      record.arg = arg;
+
+      if (finallyEntry) {
+        this.method = "next";
+        this.next = finallyEntry.finallyLoc;
+        return ContinueSentinel;
+      }
+
+      return this.complete(record);
+    },
+
+    complete: function(record, afterLoc) {
+      if (record.type === "throw") {
+        throw record.arg;
+      }
+
+      if (record.type === "break" ||
+          record.type === "continue") {
+        this.next = record.arg;
+      } else if (record.type === "return") {
+        this.rval = this.arg = record.arg;
+        this.method = "return";
+        this.next = "end";
+      } else if (record.type === "normal" && afterLoc) {
+        this.next = afterLoc;
+      }
+
+      return ContinueSentinel;
+    },
+
+    finish: function(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.finallyLoc === finallyLoc) {
+          this.complete(entry.completion, entry.afterLoc);
+          resetTryEntry(entry);
+          return ContinueSentinel;
+        }
+      }
+    },
+
+    "catch": function(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
+          if (record.type === "throw") {
+            var thrown = record.arg;
+            resetTryEntry(entry);
+          }
+          return thrown;
+        }
+      }
+
+      // The context.catch method must only be called with a location
+      // argument that corresponds to a known catch block.
+      throw new Error("illegal catch attempt");
+    },
+
+    delegateYield: function(iterable, resultName, nextLoc) {
+      this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      };
+
+      if (this.method === "next") {
+        // Deliberately forget the last sent value so that we don't
+        // accidentally pass it on to the delegate.
+        this.arg = undefined;
+      }
+
+      return ContinueSentinel;
+    }
+  };
+})(
+  // In sloppy mode, unbound `this` refers to the global object, fallback to
+  // Function constructor if we're in global strict mode. That is sadly a form
+  // of indirect eval which violates Content Security Policy.
+  (function() { return this })() || Function("return this")()
+);
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("panel-item", { attrs: { field: _vm.warehouse } }),
+      _vm._v(" "),
+      _c("panel-item", {
+        staticClass: "border-none",
+        attrs: { field: _vm.address }
+      }),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass:
+            "flex-no-shrink ml-auto w-full btn btn-default btn-primary inline-flex justify-center items-center",
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.goShipment($event)
+            }
+          }
+        },
+        [
+          _c(
+            "svg",
+            {
+              staticClass: "fill-current w-4 h-4 mr-1",
+              attrs: {
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 24 24",
+                width: "24",
+                height: "24"
+              }
+            },
+            [
+              _c("path", {
+                staticClass: "heroicon-ui",
+                attrs: {
+                  d:
+                    "M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-2.3-8.7l1.3 1.29 3.3-3.3a1 1 0 0 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-2-2a1 1 0 0 1 1.4-1.42z"
+                }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c("span", [_vm._v(_vm._s(_vm.btnTitle))])
+        ]
+      ),
+      _vm._v(" "),
+      _vm.slot
+        ? _c(
+            _vm.slot,
+            _vm._b(
+              { tag: "component", attrs: { resource: _vm.resource } },
+              "component",
+              _vm.$props,
+              false
+            )
+          )
+        : _vm._e()
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-f983034e", module.exports)
+  }
+}
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(21)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(23)
+/* template */
+var __vue_template__ = __webpack_require__(24)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-66696384"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/InventoryExpends.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-66696384", Component.options)
+  } else {
+    hotAPI.reload("data-v-66696384", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(22);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("6057ba5f", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-66696384\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./InventoryExpends.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-66696384\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./InventoryExpends.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helper__ = __webpack_require__(4);
+
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'inventory-expends',
+
+  mixins: [__WEBPACK_IMPORTED_MODULE_1__helper__["a" /* default */]],
+
+  methods: {
+    goShipment: function goShipment() {
+      var _$route$params = this.$route.params,
+          resourceName = _$route$params.resourceName,
+          resourceId = _$route$params.resourceId;
+
+
+      if (this.authorizedToUpdate && !this.alreadyShipped) {
+        this.$router.push({
+          name: 'shipment.update', params: {
+            resourceName: resourceName,
+            resourceId: resourceId
+          }
+        });
+        return;
+      }
+      this.$router.push({
+        name: 'shipment.detail', params: {
+          resourceName: resourceName,
+          resourceId: resourceId
+        }
+      });
+    }
+  },
+
+  created: function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
+      return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return this.fetchResource();
+
+            case 2:
+              this.resource = _context.sent;
+
+              this.setAddress();
+
+            case 4:
+            case 'end':
+              return _context.stop();
+          }
+        }
+      }, _callee, this);
+    }));
+
+    function created() {
+      return _ref.apply(this, arguments);
+    }
+
+    return created;
+  }()
+});
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("panel-item", { attrs: { field: _vm.warehouse } }),
+      _vm._v(" "),
+      _c("panel-item", {
+        staticClass: "border-none",
+        attrs: { field: _vm.address }
+      }),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass:
+            "flex-no-shrink ml-auto w-full btn btn-default btn-primary inline-flex justify-center items-center",
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.goShipment($event)
+            }
+          }
+        },
+        [
+          _c(
+            "svg",
+            {
+              staticClass: "fill-current w-4 h-4 mr-1",
+              attrs: {
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 24 24",
+                width: "24",
+                height: "24"
+              }
+            },
+            [
+              _c("path", {
+                staticClass: "heroicon-ui",
+                attrs: {
+                  d:
+                    "M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-2.3-8.7l1.3 1.29 3.3-3.3a1 1 0 0 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-2-2a1 1 0 0 1 1.4-1.42z"
+                }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c("span", [_vm._v("查看物流")])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-66696384", module.exports)
+  }
+}
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(_vm.resourceName, {
+    tag: "component",
+    attrs: {
+      resourceName: _vm.resourceName,
+      resourceId: _vm.resourceId,
+      field: _vm.field
+    }
+  })
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-68ff5483", module.exports)
+  }
+}
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(27)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(29)
+/* template */
+var __vue_template__ = __webpack_require__(38)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-2bf0c2d7"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/views/shipment/Detail.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2bf0c2d7", Component.options)
+  } else {
+    hotAPI.reload("data-v-2bf0c2d7", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(28);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("44e148a6", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2bf0c2d7\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Detail.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2bf0c2d7\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Detail.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 29 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helper__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_VariantListTable__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_VariantListTable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_VariantListTable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_TrackNumberInput__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_TrackNumberInput___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_TrackNumberInput__);
+
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'shipment-detail',
+  mixins: [__WEBPACK_IMPORTED_MODULE_1__helper__["a" /* default */]],
+  components: {
+    VariantListTable: __WEBPACK_IMPORTED_MODULE_2__components_VariantListTable___default.a,
+    TrackNumberInput: __WEBPACK_IMPORTED_MODULE_3__components_TrackNumberInput___default.a
+  },
+  created: function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
+      return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return this.fetchResource();
+
+            case 2:
+              this.resource = _context.sent;
+
+              // this.initItemUnit()
+              this.setAddress();
+              this.initialLoading = false;
+
+            case 5:
+            case 'end':
+              return _context.stop();
+          }
+        }
+      }, _callee, this);
+    }));
+
+    function created() {
+      return _ref.apply(this, arguments);
+    }
+
+    return created;
+  }()
+});
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(31);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("72464cd7", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-eac55094\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./VariantListTable.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-eac55094\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./VariantListTable.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__TrackNumberInput__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__TrackNumberInput___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__TrackNumberInput__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__logisticsHelper__ = __webpack_require__(7);
+
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'variant-list-table',
+  mixins: [__WEBPACK_IMPORTED_MODULE_2__logisticsHelper__["a" /* default */]],
+  props: {
+    items: {
+      type: Array,
+      default: function _default() {
+        return [];
+      }
+    },
+    detail: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data: function data() {
+    return {
+      shipments: {},
+      multipleSelection: [],
+      dialogVisible: false
+    };
+  },
+
+
+  watch: {
+    allShipped: function allShipped(value) {
+      if (value) {
+        this.$emit('all-shipped-change');
+      }
+    }
+  },
+  methods: {
+    // 最小单位发货事件
+    unitShipment: function unitShipment(item, unit) {
+      var clone = _.cloneDeep(item);
+
+      clone.units = item.units.filter(function (u) {
+        return u === unit;
+      });
+      // console.log(clone)
+      this.$emit('shipment', [clone]);
+    },
+
+    // 检测填单信息
+    checkShipment: function checkShipment(shipment) {
+      return new Promise(function (resolve, reject) {
+        if (shipment.logistic_id && shipment.tracking_number) {
+          resolve();
+        } else {
+          reject('信息不完整，无法填充');
+        }
+      });
+    },
+
+    // 单个sku填充
+    fillSub: function fillSub(shipment, item) {
+      var _this = this;
+
+      this.checkShipment(shipment).then(function () {
+        item.units.forEach(function (unit) {
+          if (_.isNull(unit.shipment_track_id)) {
+            unit.shipment = Object.assign({}, unit.shipment, shipment);
+            Nova.$emit('track-number-item-' + unit.id + '-change', shipment);
+          }
+        });
+        _this.$message({
+          message: item.variant.variantName + ' \u7269\u6D41\u4FE1\u606F\u586B\u5145\u5B8C\u6210',
+          type: 'success'
+        });
+      }).catch(function (err) {
+        _this.$message({
+          message: err,
+          type: 'error'
+        });
+      });
+    },
+
+
+    // 全部填充
+    fill: function fill(shipment) {
+      var _this2 = this;
+
+      this.checkShipment(shipment).then(function () {
+        if (_this2.multipleSelection.length === 0) {
+          _this2.$message({ message: '请勾选变体', type: 'error' });
+          return;
+        }
+        _this2.multipleSelection.forEach(function (selected) {
+          _this2.fillSub(shipment, selected);
+        });
+      }).catch(function (err) {
+        _this2.$message({
+          message: err,
+          type: 'error'
+        });
+      });
+    },
+
+
+    // 初始化
+    initShipments: function initShipments() {
+      var _this3 = this;
+
+      this.shipments = {};
+      this.items.forEach(function (item) {
+        _this3.$set(_this3.shipments, item.id, { logistic_id: null, tracking_number: '' });
+      });
+    },
+
+
+    // 勾选事件
+    handleSelectionChange: function handleSelectionChange(val) {
+      this.multipleSelection = val;
+    },
+    isSelected: function isSelected(row) {
+      return this.multipleSelection.find(function (item) {
+        return item.id === row.id;
+      });
+    },
+
+
+    // 已发货数量
+    shippedCount: function shippedCount(row) {
+      return row.units.filter(function (unit) {
+        return !_.isNull(unit.shipment_track_id);
+      }).length;
+    },
+
+
+    // 以填单号数量
+    shipmentFillCount: function shipmentFillCount(row) {
+      return row.units.filter(function (unit) {
+        return !_.isEmpty(unit.shipment.tracking_number);
+      }).length;
+    },
+
+
+    // 查看物流
+    openTrackNumberDetailModal: function openTrackNumberDetailModal() {}
+  },
+
+  components: {
+    TrackNumberInput: __WEBPACK_IMPORTED_MODULE_1__TrackNumberInput___default.a
+  },
+
+  computed: {
+    // 是否全部发货
+    allShipped: function allShipped() {
+      return _.every(this.items.reduce(function (res, item) {
+        res.push.apply(res, _toConsumableArray(item.units));
+        return res;
+      }, []), function (unit) {
+        return !_.isNull(unit.shipment_track_id);
+      });
+    },
+
+
+    // 单sku发货状态检测
+    itemIsShipped: function itemIsShipped() {
+      return function (item) {
+        return _.every(item.units, function (unit) {
+          return !_.isNull(unit.shipment_track_id);
+        });
+      };
+    }
+  },
+
+  mounted: function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
+      return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return this.initLogistics();
+
+            case 2:
+              this.initShipments();
+
+            case 3:
+            case 'end':
+              return _context.stop();
+          }
+        }
+      }, _callee, this);
+    }));
+
+    function mounted() {
+      return _ref.apply(this, arguments);
+    }
+
+    return mounted;
+  }()
+});
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(34);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("f54abe84", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-405a8321\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TrackNumberInput.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-405a8321\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TrackNumberInput.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.el-select .el-input {\n    min-width: 120px;\n}\n.input-with-select .el-input-group__prepend {\n    background-color: #fff;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 35 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__logisticsHelper__ = __webpack_require__(7);
+
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'track-number-input',
+
+  mixins: [__WEBPACK_IMPORTED_MODULE_1__logisticsHelper__["a" /* default */]],
+
+  props: {
+    logistics: {
+      type: Array,
+      default: function _default() {
+        return [];
+      }
+    },
+    shipment: {
+      type: Object,
+      default: function _default() {
+        return { id: null, logistic_id: null, tracking_number: '' };
+      }
+    },
+    eventKey: {
+      type: String
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  data: function data() {
+    return {
+      logistic_id: '',
+      tracking_number: ''
+    };
+  },
+
+
+  methods: {
+    initValue: function initValue(_ref) {
+      var logistic_id = _ref.logistic_id,
+          tracking_number = _ref.tracking_number;
+
+      this.logistic_id = logistic_id;
+      this.tracking_number = tracking_number;
+    },
+    changeInput: function changeInput(tracking_number) {
+      this.shipment.tracking_number = tracking_number;
+    },
+    changeSelect: function changeSelect(logistic_id) {
+      console.log(logistic_id);
+      this.shipment.logistic_id = logistic_id;
+    },
+    getValue: function getValue() {
+      return this.currentShipment;
+    }
+  },
+
+  computed: {
+    list: function list() {
+      return this.logistics || this.logisticOptions;
+    },
+    currentShipment: function currentShipment() {
+      return {
+        logistic_id: this.logistic_id,
+        tracking_number: this.tracking_number
+      };
+    },
+    currentLogisticName: function currentLogisticName() {
+      return _.get(_.find(this.list, ['id', this.logistic_id]), 'name', '-');
+    }
+  },
+
+  mounted: function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
+      var _this = this;
+
+      return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              // this.shipment.getValue = this.getValue
+              this.initValue(this.shipment);
+
+              Nova.$on(this.eventKey, function (shipment) {
+                _this.initValue(shipment);
+              });
+
+            case 2:
+            case 'end':
+              return _context.stop();
+          }
+        }
+      }, _callee, this);
+    }));
+
+    function mounted() {
+      return _ref2.apply(this, arguments);
+    }
+
+    return mounted;
+  }(),
+  destroyed: function destroyed() {
+    Nova.$off(this.eventKey);
+  }
+});
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      !_vm.disabled
+        ? _c(
+            "el-input",
+            {
+              staticClass: "input-with-select",
+              attrs: { placeholder: "请输入物流单号" },
+              on: { change: _vm.changeInput },
+              model: {
+                value: _vm.tracking_number,
+                callback: function($$v) {
+                  _vm.tracking_number = $$v
+                },
+                expression: "tracking_number"
+              }
+            },
+            [
+              _c(
+                "el-select",
+                {
+                  attrs: {
+                    slot: "prepend",
+                    disabled: _vm.disabled,
+                    filterable: "",
+                    placeholder: "请选择物流公司"
+                  },
+                  on: { change: _vm.changeSelect },
+                  slot: "prepend",
+                  model: {
+                    value: _vm.logistic_id,
+                    callback: function($$v) {
+                      _vm.logistic_id = $$v
+                    },
+                    expression: "logistic_id"
+                  }
+                },
+                _vm._l(_vm.list, function(item) {
+                  return _c("el-option", {
+                    key: item.code,
+                    attrs: { label: item.name, value: item.id }
+                  })
+                }),
+                1
+              ),
+              _vm._v(" "),
+              _vm._t("default", null, {
+                slot: "append",
+                disabled: _vm.disabled,
+                shipment: _vm.currentShipment
+              })
+            ],
+            2
+          )
+        : _c("div", { staticClass: "flex items-center" }, [
+            _c("div", { staticClass: "w-2/5 py-3" }, [
+              _c(
+                "span",
+                { staticClass: "inline-block   py-1 text-80 text-sm" },
+                [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.currentLogisticName) +
+                      "\n        "
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "w-3/5 py-3 px-8" }, [
+              _c(
+                "span",
+                { staticClass: "inline-block  px-3 py-1 text-80 text-sm" },
+                [_vm._v(_vm._s(_vm.tracking_number))]
+              )
+            ])
+          ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-405a8321", module.exports)
+  }
+}
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "el-table",
+        {
+          ref: "variantTable",
+          staticStyle: { width: "100%" },
+          attrs: { data: _vm.items, "row-key": "id" },
+          on: { "selection-change": _vm.handleSelectionChange }
+        },
+        [
+          _c("el-table-column", {
+            attrs: { type: "selection", label: "ID", prop: "id" }
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: { type: "expand" },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(props) {
+                  return [
+                    !_vm.detail
+                      ? _c("el-alert", {
+                          attrs: {
+                            title: "可以为单个SKU最小单位拆分物流",
+                            type: "info",
+                            "close-text": "知道了"
+                          }
+                        })
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c(
+                      "card",
+                      {
+                        staticClass:
+                          "overflow-hidden border border-50 mb-6 my-3"
+                      },
+                      [
+                        _c(
+                          "el-table",
+                          {
+                            staticStyle: { width: "100%" },
+                            attrs: { data: props.row.units }
+                          },
+                          [
+                            _c("el-table-column", {
+                              attrs: { type: "index", width: "50" }
+                            }),
+                            _vm._v(" "),
+                            _c("el-table-column", {
+                              attrs: { label: "物流单号", "min-width": "150" },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "default",
+                                  fn: function(ref) {
+                                    var $index = ref.$index
+                                    var row = ref.row
+                                    return [
+                                      _c("track-number-input", {
+                                        attrs: {
+                                          "event-key":
+                                            "track-number-item-" +
+                                            row.id +
+                                            "-change",
+                                          shipment: row.shipment,
+                                          logistics: _vm.logisticOptions,
+                                          disabled:
+                                            !!row.shipment_track_id ||
+                                            _vm.detail
+                                        }
+                                      })
+                                    ]
+                                  }
+                                }
+                              ])
+                            }),
+                            _vm._v(" "),
+                            _c("el-table-column", {
+                              attrs: {
+                                label: "操作",
+                                align: "right",
+                                "min-width": "50"
+                              },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "default",
+                                  fn: function(ref) {
+                                    var $index = ref.$index
+                                    var row = ref.row
+                                    return [
+                                      row.shipment_track_id || _vm.detail
+                                        ? _c("span", [
+                                            _c(
+                                              "button",
+                                              {
+                                                staticClass:
+                                                  "appearance-none focus:outline-none cursor-pointer text-70 hover:text-primary",
+                                                on: {
+                                                  click: function($event) {
+                                                    $event.preventDefault()
+                                                    return _vm.openTrackNumberDetailModal(
+                                                      $event
+                                                    )
+                                                  }
+                                                }
+                                              },
+                                              [
+                                                _c("icon", {
+                                                  attrs: {
+                                                    type: "view",
+                                                    width: "22",
+                                                    height: "18",
+                                                    "view-box": "0 0 22 16"
+                                                  }
+                                                })
+                                              ],
+                                              1
+                                            )
+                                          ])
+                                        : _c(
+                                            "el-button",
+                                            {
+                                              attrs: {
+                                                type: "primary",
+                                                size: "small"
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  _vm.unitShipment(
+                                                    props.row,
+                                                    row
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                                    发货\n                                "
+                                              )
+                                            ]
+                                          )
+                                    ]
+                                  }
+                                }
+                              ])
+                            })
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ]
+                }
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: { label: "商品名称", prop: "variant.variantName" }
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: { label: "数量", "min-width": "60", prop: "pcs" }
+          }),
+          _vm._v(" "),
+          !_vm.detail
+            ? _c("el-table-column", {
+                attrs: { label: "已发货", "min-width": "60" },
+                scopedSlots: _vm._u([
+                  {
+                    key: "default",
+                    fn: function(ref) {
+                      var $index = ref.$index
+                      var row = ref.row
+                      return [
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(_vm.shippedCount(row)) +
+                            "\n            "
+                        )
+                      ]
+                    }
+                  }
+                ])
+              })
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.detail
+            ? _c("el-table-column", {
+                attrs: { label: "已填单号", "min-width": "60" },
+                scopedSlots: _vm._u([
+                  {
+                    key: "default",
+                    fn: function(ref) {
+                      var $index = ref.$index
+                      var row = ref.row
+                      return [
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(_vm.shipmentFillCount(row)) +
+                            "\n            "
+                        )
+                      ]
+                    }
+                  }
+                ])
+              })
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.detail
+            ? _c("el-table-column", {
+                attrs: { label: "一键填充", "min-width": "150" },
+                scopedSlots: _vm._u([
+                  {
+                    key: "default",
+                    fn: function(ref) {
+                      var $index = ref.$index
+                      var row = ref.row
+                      return [
+                        !_vm.itemIsShipped(row)
+                          ? _c("track-number-input", {
+                              attrs: { logistics: _vm.logisticOptions },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "default",
+                                  fn: function(ref) {
+                                    var shipment = ref.shipment
+                                    var disabled = ref.disabled
+                                    return [
+                                      _c(
+                                        "button",
+                                        {
+                                          staticClass:
+                                            "appearance-none focus:outline-none cursor-pointer text-70 hover:text-primary",
+                                          attrs: { disabled: disabled },
+                                          on: {
+                                            click: function($event) {
+                                              $event.preventDefault()
+                                              _vm.fillSub(shipment, row)
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c("icon", {
+                                            attrs: { type: "edit" }
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    ]
+                                  }
+                                }
+                              ]),
+                              model: {
+                                value: _vm.shipments[row.id],
+                                callback: function($$v) {
+                                  _vm.$set(_vm.shipments, row.id, $$v)
+                                },
+                                expression: "shipments[row.id]"
+                              }
+                            })
+                          : _c("span", [_vm._v("该项目已完成发货")])
+                      ]
+                    }
+                  }
+                ])
+              })
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.detail
+            ? _c("el-table-column", {
+                attrs: { label: "操作", align: "right", "min-width": "50" },
+                scopedSlots: _vm._u([
+                  {
+                    key: "default",
+                    fn: function(ref) {
+                      var $index = ref.$index
+                      var row = ref.row
+                      return [
+                        _c(
+                          "el-button",
+                          {
+                            attrs: {
+                              disabled: _vm.itemIsShipped(row),
+                              type: "primary",
+                              size: "medium"
+                            },
+                            on: {
+                              click: function($event) {
+                                _vm.$emit("shipment", [row])
+                              }
+                            }
+                          },
+                          [_vm._v("批量发货\n                ")]
+                        )
+                      ]
+                    }
+                  }
+                ])
+              })
+            : _vm._e()
+        ],
+        1
+      ),
+      _vm._v(" "),
+      !_vm.detail
+        ? _c(
+            "div",
+            { staticClass: "bg-30 flex py-4 px-6" },
+            [
+              !_vm.allShipped
+                ? [
+                    _c("track-number-input", {
+                      staticClass: "ml-auto mr-3",
+                      staticStyle: { width: "50%" },
+                      attrs: { logistics: _vm.logisticOptions },
+                      scopedSlots: _vm._u([
+                        {
+                          key: "default",
+                          fn: function(ref) {
+                            var shipment = ref.shipment
+                            var disabled = ref.disabled
+                            return [
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "appearance-none cursor-pointer text-70 hover:text-primary",
+                                  on: {
+                                    click: function($event) {
+                                      $event.preventDefault()
+                                      _vm.fill(shipment)
+                                    }
+                                  }
+                                },
+                                [_c("icon", { attrs: { type: "edit" } })],
+                                1
+                              )
+                            ]
+                          }
+                        }
+                      ])
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "el-button",
+                      {
+                        attrs: { type: "primary" },
+                        on: {
+                          click: function($event) {
+                            _vm.$emit("shipment", _vm.items)
+                          }
+                        }
+                      },
+                      [_vm._v("批量发货")]
+                    )
+                  ]
+                : _c("span", { staticClass: "ml-auto text-80 font-normal" }, [
+                    _vm._v("发货已完成！")
+                  ])
+            ],
+            2
+          )
+        : _vm._e()
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-eac55094", module.exports)
+  }
+}
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "loading-view",
+    { attrs: { loading: _vm.initialLoading } },
+    [
+      _c("heading", { staticClass: "mb-3" }, [_vm._v("Address")]),
+      _vm._v(" "),
+      _c("card", { staticClass: "overflow-hidden border border-50 mb-6" }, [
+        _c(
+          "div",
+          { staticClass: "py-3 px-6" },
+          [
+            _c("panel-item", { attrs: { field: _vm.warehouse } }),
+            _vm._v(" "),
+            _c("panel-item", {
+              staticClass: "border-none",
+              attrs: { field: _vm.address }
+            })
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c("heading", { staticClass: "mb-3" }, [_vm._v("Send Shipment Edit")]),
+      _vm._v(" "),
+      _c(
+        "card",
+        { staticClass: "overflow-hidden border border-50 mb-6" },
+        [
+          _c("variant-list-table", {
+            attrs: { items: _vm.resource.items, detail: "" },
+            on: { shipment: _vm.shipment }
+          })
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2bf0c2d7", module.exports)
+  }
+}
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(40)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(42)
+/* template */
+var __vue_template__ = __webpack_require__(43)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/views/shipment/Update.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5811e74f", Component.options)
+  } else {
+    hotAPI.reload("data-v-5811e74f", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(41);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("5ccae46e", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5811e74f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Update.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5811e74f\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Update.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 42 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helper__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_VariantListTable__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_VariantListTable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_VariantListTable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_TrackNumberInput__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_TrackNumberInput___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_TrackNumberInput__);
+
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'shipment-update',
+  mixins: [__WEBPACK_IMPORTED_MODULE_1__helper__["a" /* default */]],
+  components: {
+    VariantListTable: __WEBPACK_IMPORTED_MODULE_2__components_VariantListTable___default.a,
+    TrackNumberInput: __WEBPACK_IMPORTED_MODULE_3__components_TrackNumberInput___default.a
+  },
+
+  methods: {
+    shipment: function shipment(item) {
+      var _this = this;
+
+      Nova.request().post(this.shipmentApi, this.filterItemShipped(item)).then(function (_ref) {
+        var _ref$data = _ref.data,
+            data = _ref$data.data,
+            notify = _objectWithoutProperties(_ref$data, ['data']);
+
+        _this.handleChange(data);
+        _this.$notify(notify);
+      });
+    },
+    allShippedChange: function allShippedChange() {
+      this.$router.replace({
+        name: 'shipment.detail', params: {
+          resourceName: this.resourceName,
+          resourceId: this.resourceId
+        }
+      });
+    },
+    filterItemShipped: function filterItemShipped(items) {
+      return items.map(function (item) {
+        var clone = _.cloneDeep(item);
+        clone.units = clone.units.filter(function (unit) {
+          return _.isNull(unit.shipment_track_id);
+        });
+        var id = clone.id,
+            inventory_income_id = clone.inventory_income_id,
+            units = clone.units;
+
+        return { id: id, inventory_income_id: inventory_income_id, units: units };
+      });
+    },
+
+    /**
+     * Update the field's internal value.
+     */
+    handleChange: function handleChange(data) {
+      var _this2 = this;
+
+      data.forEach(function (item) {
+        var resourceItem = _.find(_this2.resource.items, ['id', item.id]);
+        resourceItem.units.forEach(function (unit, index) {
+          var findUnit = item.units.find(function (resUnit) {
+            return resUnit.id === unit.id;
+          });
+          if (findUnit) {
+            resourceItem.units.splice(index, 1, findUnit);
+            // this.$set(resourceItem, 'units[' + index + ']', findUnit)
+          }
+        });
+      });
+    }
+  },
+  created: function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
+      return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return this.fetchResource();
+
+            case 2:
+              this.resource = _context.sent;
+
+              this.initItemUnit();
+              this.setAddress();
+              this.initialLoading = false;
+
+            case 6:
+            case 'end':
+              return _context.stop();
+          }
+        }
+      }, _callee, this);
+    }));
+
+    function created() {
+      return _ref2.apply(this, arguments);
+    }
+
+    return created;
+  }()
+});
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "loading-view",
+    { attrs: { loading: _vm.initialLoading } },
+    [
+      _c("heading", { staticClass: "mb-3" }, [_vm._v("Address")]),
+      _vm._v(" "),
+      _c("card", { staticClass: "overflow-hidden border border-50 mb-6" }, [
+        _c(
+          "div",
+          { staticClass: "py-3 px-6" },
+          [
+            _c("panel-item", { attrs: { field: _vm.warehouse } }),
+            _vm._v(" "),
+            _c("panel-item", {
+              staticClass: "border-none",
+              attrs: { field: _vm.address }
+            })
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c("heading", { staticClass: "mb-3" }, [_vm._v("Send Shipment Edit")]),
+      _vm._v(" "),
+      _c(
+        "card",
+        { staticClass: "overflow-hidden border border-50 mb-6" },
+        [
+          _c("variant-list-table", {
+            attrs: { items: _vm.resource.items },
+            on: {
+              "all-shipped-change": _vm.allShippedChange,
+              shipment: _vm.shipment
+            }
+          })
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5811e74f", module.exports)
+  }
+}
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(49)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(51)
+/* template */
+var __vue_template__ = __webpack_require__(53)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-2aa5754e"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/toPut.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2aa5754e", Component.options)
+  } else {
+    hotAPI.reload("data-v-2aa5754e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(50);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("50b5da7a", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2aa5754e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./toPut.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2aa5754e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./toPut.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 51 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__slotHelper__ = __webpack_require__(52);
+
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'to-put',
+  mixins: [__WEBPACK_IMPORTED_MODULE_1__slotHelper__["a" /* default */]],
+  data: function data() {
+    return {
+      loading: false,
+      isSubmit: false
+    };
+  },
+
+
+  methods: {
+    submit: function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
+        var _ref2, data, status, notify;
+
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                this.loading = true;
+                _context.prev = 1;
+                _context.next = 4;
+                return Nova.request().put(this.api);
+
+              case 4:
+                _ref2 = _context.sent;
+                data = _ref2.data;
+                status = data.status, notify = _objectWithoutProperties(data, ['status']);
+
+                this.changeStatus(status);
+                this.$notify(notify);
+                this.loading = false;
+                this.isSubmit = true;
+                // this.resource.authorizedToUpdate = false
+                _context.next = 16;
+                break;
+
+              case 13:
+                _context.prev = 13;
+                _context.t0 = _context['catch'](1);
+
+                console.error(_context.t0.response);
+
+              case 16:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, _callee, this, [[1, 13]]);
+      }));
+
+      function submit() {
+        return _ref.apply(this, arguments);
+      }
+
+      return submit;
+    }()
+  },
+
+  computed: {
+    api: function api() {
+      return Nova.config['erp-prefix'] + '/' + this.resourceName + '/' + this.resourceId + '/put';
+    }
+  }
+});
+
+/***/ }),
+/* 52 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+  props: ['resourceName', 'resourceId', 'field', 'resource'],
+
+  methods: {
+    changeStatus: function changeStatus(status) {
+      Nova.$emit(this.statusEvent, status);
+    }
+  },
+
+  computed: {
+    statusEvent: function statusEvent() {
+      return _.get(this, 'field.statusField', 'status') + '-change';
+    },
+
+    // 是否可见
+    canShow: function canShow() {
+      return _.get(this.field, 'canShow', 'SHIPPED') === _.get(this, 'resource.status');
+    }
+  }
+});
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm.canShow && !_vm.isSubmit
+    ? _c("div", { staticClass: "flex items-center justify-center" }, [
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "loading",
+                rawName: "v-loading.fullscreen.lock",
+                value: _vm.loading,
+                expression: "loading",
+                modifiers: { fullscreen: true, lock: true }
+              }
+            ],
+            staticClass:
+              "my-3 flex-no-shrink ml-auto w-full btn btn-default btn-primary inline-flex justify-center items-center",
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.submit($event)
+              }
+            }
+          },
+          [
+            _c(
+              "svg",
+              {
+                staticClass: "fill-current w-4 h-4 mr-1",
+                attrs: {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  viewBox: "0 0 24 24",
+                  width: "24",
+                  height: "24"
+                }
+              },
+              [
+                _c("path", {
+                  staticClass: "heroicon-ui",
+                  attrs: {
+                    d:
+                      "M17 11a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H7a1 1 0 0 1 0-2h4V7a1 1 0 0 1 2 0v4h4z"
+                  }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c("span", [_vm._v("确认入库")])
+          ]
+        )
+      ])
+    : _vm._e()
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2aa5754e", module.exports)
+  }
+}
+
+/***/ })
+/******/ ]);

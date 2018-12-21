@@ -12,16 +12,27 @@
             </svg>
             <span>{{btnTitle}}</span>
         </button>
+        <component
+                v-if="slot"
+                :is="slot"
+                v-bind="$props"
+                :resource="resource"
+        >
+        </component>
     </div>
 </template>
 
 <script>
   import Helper from '../helper'
+  import toPut from './toPut'
 
   export default {
     name: 'inventory-incomes',
     mixins: [Helper],
 
+    components: {
+      toPut
+    },
     methods: {
       goShipment () {
         const {resourceName, resourceId} = this.$route.params
@@ -39,11 +50,13 @@
             }
           })
       },
-
     },
     computed: {
       btnTitle () {
         return this.alreadyShipped ? '物流详情' : '发货'
+      },
+      slot () {
+        return _.get(this, 'field.slot', false)
       }
     },
     async created () {

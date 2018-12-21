@@ -45,7 +45,7 @@
         return `${Nova.config['erp-prefix']}/${this.resourceName}/${this.resourceId}/review`
       },
       uncommit () {
-        return this.value === this.field.canToReviewValue
+        return this.value === this.field.canStatus
       }
     }
   }

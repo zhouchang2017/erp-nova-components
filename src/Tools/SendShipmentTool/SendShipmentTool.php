@@ -25,4 +25,14 @@ class SendShipmentTool extends ResourceTool
     {
         return 'send-shipment-tool';
     }
+
+    public function statusField(string $fieldAttribute)
+    {
+        return $this->withMeta(['statusField' => $fieldAttribute]);
+    }
+
+    public function slot(string $slot, string $canShow = 'SHIPPED')
+    {
+        return $this->withMeta(['slot' => $slot, 'canShow' => $canShow]);
+    }
 }
